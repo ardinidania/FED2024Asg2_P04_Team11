@@ -1,1 +1,2 @@
-# FED2024Asg2_P04_Team11
+# FED2024Asg2_P04_Team1
+Ardini, Puteri, Megan
