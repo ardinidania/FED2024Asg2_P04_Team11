@@ -1,35 +1,4 @@
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Helper function to toggle visibility of elements
 function toggleVisibility(elementId) {
     const element = document.getElementById(elementId);
