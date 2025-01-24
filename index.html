@@ -7,4 +7,75 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MokeSell</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button id="login-btn">Login</button>
+                <button id="register-btn">Register</button>
+            </div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Affordable Apple & Samsung Products</h1>
+            <button class="shop-now">Shop Now</button>
+        </section>
+
+        <section id="account-creation" class="account-section">
+            <div class="login-form">
+                <h2>Login to your account</h2>
+                <form id="login-form">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
+
+            <div class="register-form">
+                <h2>Create an account</h2>
+                <form id="register-form">
+                    <button type="button" class="google-signup">Sign up with Google</button>
+                    <p>OR</p>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Create Account</button>
+                </form>
+                <p>Already have an account? <a href="#">Login</a></p>
+            </div>
+        </section>
+
+
+        <section id="communications" class="chat-feature">
+            <h2>Chat with Sellers</h2>
+            <div class="chat-window">
+                <div class="chat-header">Chat with Sam</div>
+                <div class="chat-body">
+                    <div class="message seller">Hi, I’m interested in your product. Is it still available?</div>
+                    <div class="message buyer">Yes, it is available. Do you have any questions?</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Type a message...">
+                    <button>Send</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MokeSell. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>

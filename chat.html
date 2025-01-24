@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sakari Messages</h1>
+    </header>
+    <main>
+        <div id="messages">
+            <p>Loading messages...</p>
+        </div>
+    </main>
+    <script>
+        // Replace with your actual account ID and API token
+        const ACCOUNT_ID = "12345"; // Your Sakari Account ID
+        const API_TOKEN = "YOUR_API_TOKEN"; // Your Sakari API Token
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": `https://api.sakari.io/v1/accounts/${ACCOUNT_ID}/messages`,
+            "method": "GET",
+            "headers": {
+                "Authorization": `Bearer ${API_TOKEN}`
+            }
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response); // Logs the API response
+
+            // Display messages in the DOM
+            const messagesDiv = $('#messages');
+            messagesDiv.empty(); // Clear the loading text
+
+            if (response && response.length > 0) {
+                response.forEach(message => {
+                    messagesDiv.append(`
+                        <div class="message">
+                            <p><strong>To:</strong> ${message.to}</p>
+                            <p><strong>Message:</strong> ${message.text}</p>
+                            <p><strong>Status:</strong> ${message.status}</p>
+                        </div>
+                        <hr>
+                    `);
+                });
+            } else {
+                messagesDiv.append('<p>No messages found.</p>');
+            }
+        }).fail(function (error) {
+            console.error('Error fetching messages:', error);
+            $('#messages').html('<p>Error loading messages. Please check the console for more details.</p>');
+        });
+    </script>
+</body>
+</html>
