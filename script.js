@@ -11,6 +11,37 @@ var settings = {
   $.ajax(settings).done(function (response) {
     console.log(response);
   });
+
+  /* js for help.html */
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggleChat = document.getElementById("toggle-chat");
+    const chatBox = document.getElementById("chat-box");
+    const ratingBox = document.getElementById("rating-box");
+
+    toggleChat.addEventListener("change", function() {
+        if (this.checked) {
+            chatBox.classList.remove("hidden");
+        } else {
+            chatBox.classList.add("hidden");
+        }
+    });
+
+    document.querySelector(".close-btn").addEventListener("click", function() {
+        chatBox.classList.add("hidden");
+        toggleChat.checked = false;
+    });
+
+    setTimeout(() => {
+        chatBox.classList.add("hidden");
+        ratingBox.classList.remove("hidden");
+    }, 5000);
+
+    document.querySelector(".submit-btn").addEventListener("click", function() {
+        alert("Thank you for your feedback!");
+        ratingBox.classList.add("hidden");
+    });
+});
+
   
 
 
