@@ -17,7 +17,11 @@ var settings = {
     const toggleChat = document.getElementById("toggle-chat");
     const chatBox = document.getElementById("chat-box");
     const ratingBox = document.getElementById("rating-box");
-
+    const chatInput = document.querySelector(".chat-input input");
+    const sendButton = document.querySelector(".chat-input button");
+    const chatContent = document.querySelector(".chat-content");
+    
+    // Show chat window when toggle is checked
     toggleChat.addEventListener("change", function() {
         if (this.checked) {
             chatBox.classList.remove("hidden");
@@ -26,21 +30,55 @@ var settings = {
         }
     });
 
+    // Close button functionality
     document.querySelector(".close-btn").addEventListener("click", function() {
         chatBox.classList.add("hidden");
         toggleChat.checked = false;
     });
 
+    // Send message function
+    function sendMessage() {
+        const message = chatInput.value.trim();
+        if (message !== "") {
+            // Create a new chat message element
+            const newMessage = document.createElement("p");
+            newMessage.textContent = message;
+            newMessage.classList.add("reply");
+
+            // Append message to chat content
+            chatContent.appendChild(newMessage);
+
+            // Clear input field
+            chatInput.value = "";
+
+            // Scroll to the bottom of chat content
+            chatContent.scrollTop = chatContent.scrollHeight;
+        }
+    }
+
+    // Send message when clicking the send button
+    sendButton.addEventListener("click", sendMessage);
+
+    // Send message when pressing "Enter" key
+    chatInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+
+    // Automatically show rating box after a delay
     setTimeout(() => {
         chatBox.classList.add("hidden");
         ratingBox.classList.remove("hidden");
-    }, 5000);
+    }, 10000);
 
+    // Submit feedback button functionality
     document.querySelector(".submit-btn").addEventListener("click", function() {
         alert("Thank you for your feedback!");
         ratingBox.classList.add("hidden");
     });
 });
+
 
   
 
