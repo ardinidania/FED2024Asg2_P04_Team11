@@ -1,12 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>Help Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .chat-box, .feedback-box {
+            display: none;
+            margin-top: 20px;
+        }
+        .message-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .message {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .user-message {
+            text-align: right;
+            color: blue;
+            background-color: #e3f2fd;
+        }
+        .agent-message {
+            text-align: left;
+            color: green;
+            background-color: #e8f5e9;
+        }
+        textarea, input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-
+    <h1>Help Page</h1>
     
+    <!-- Initial Message Box -->
+    <div class="initial-box">
+        <textarea id="initialMessage" placeholder="Type your message here..."></textarea><br>
+        <button id="sendMessage">Send Message</button>
+    </div>
+    
+    <!-- Chat Box -->
+    <div class="chat-box">
+        <h2>Chat with Customer Care</h2>
+        <div class="message-container" id="messageContainer"></div>
+        <textarea id="userChatMessage" placeholder="Type your message..."></textarea><br>
+        <button id="sendChatMessage">Send</button>
+    </div>
+    
+    <!-- Feedback Box -->
+    <div class="feedback-box">
+        <h2>Rate Your Experience</h2>
+        <label for="rating">Rating (1-5): </label>
+        <input type="number" id="rating" min="1" max="5"><br><br>
+
+        <label for="feedback">Additional Feedback:</label>
+        <textarea id="feedback" placeholder="Write your feedback here..."></textarea><br><br>
+
+        <button id="submitFeedback">Submit Feedback</button>
+    </div>
+
+    <script>
+        const sendMessageBtn = document.getElementById('sendMessage');
+        const initialMessage = document.getElementById('initialMessage');
+        const chatBox = document.querySelector('.chat-box');
+        const feedbackBox = document.querySelector('.feedback-box');
+        const messageContainer = document.getElementById('messageContainer');
+        const sendChatMessageBtn = document.getElementById('sendChatMessage');
+        const userChatMessage = document.getElementById('userChatMessage');
+        const submitFeedbackBtn = document.getElementById('submitFeedback');
+        const ratingInput = document.getElementById('rating');
+        const feedbackInput = document.getElementById('feedback');
+
+        let messages = [];
+
+        // Simulate sending an initial message
+        sendMessageBtn.addEventListener('click', () => {
+            const message = initialMessage.value.trim();
+            if (message) {
+                alert("Message sent! Please wait while we connect you to customer care.");
+                setTimeout(() => {
+                    chatBox.style.display = 'block';
+                }, 3000); // Simulate wait time
+                initialMessage.value = '';
+            } else {
+                alert("Please enter a message before sending.");
+            }
+        });
+
+        // Simulate sending chat messages
+        sendChatMessageBtn.addEventListener('click', () => {
+            const message = userChatMessage.value.trim();
+            if (message) {
+                messages.push({ sender: 'user', text: message });
+                displayMessages();
+                userChatMessage.value = '';
+
+                // Simulate customer care response
+                setTimeout(() => {
+                    messages.push({ sender: 'agent', text: 'Thank you for reaching out. How can I help you?' });
+                    displayMessages();
+                }, 1500);
+            }
+        });
+
+        function displayMessages() {
+            messageContainer.innerHTML = messages.map(msg => 
+                `<div class="message ${msg.sender === 'user' ? 'user-message' : 'agent-message'}">
+                    ${msg.text}
+                </div>`).join('');
+        }
+
+        // Handle feedback submission
+        submitFeedbackBtn.addEventListener('click', () => {
+            const rating = parseInt(ratingInput.value);
+            const feedback = feedbackInput.value.trim();
+
+            if (rating >= 1 && rating <= 5 && feedback) {
+                alert(`Thank you for your feedback!\nRating: ${rating}\nFeedback: ${feedback}`);
+                feedbackBox.style.display = 'none';
+                chatBox.style.display = 'none';
+
+                // Optionally reset fields
+                ratingInput.value = '';
+                feedbackInput.value = '';
+            } else {
+                alert("Please provide a rating (1-5) and additional feedback.");
+            }
+        });
+
+        // Show feedback box after chat ends
+        setTimeout(() => {
+            feedbackBox.style.display = 'block';
+        }, 30000); // Simulate chat duration
+    </script>
+</body>
+</html>

@@ -11,7 +11,31 @@ var settings = {
   $.ajax(settings).done(function (response) {
     console.log(response);
   });
+
+  /* js for help.html */
+  const express = require('express');
+  const app = express();
+  app.use(express.json());
   
+  let ratings = [];
+  
+  app.post('/submitRating', (req, res) => {
+      const { rating } = req.body;
+      if (rating >= 1 && rating <= 5) {
+          ratings.push(rating);
+          return res.status(200).send({ message: 'Rating submitted successfully!' });
+      }
+      res.status(400).send({ message: 'Invalid rating.' });
+  });
+  
+  app.listen(3000, () => {
+      console.log('Server is running on port 3000');
+  });
+  
+
+
+
+
 
 
 
