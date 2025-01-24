@@ -1,17 +1,3 @@
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://api.sakari.io/v1/accounts/12345/messages", // Replace 12345 with your account ID
-    "method": "GET",
-    "headers": {
-      "Authorization": "Bearer YOUR_API_TOKEN" // Replace YOUR_API_TOKEN with your actual token
-    }
-  };
-  
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
-  
 
 
 
