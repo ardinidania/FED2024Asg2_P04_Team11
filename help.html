@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <div class="container">
+        <h1>Hello there <br><span>How can we help?</span></h1>
+        <input type="text" placeholder="Send us a message">
 
-    
+        <div class="chat-section">
+            <div class="conversation">
+                <label class="toggle">
+                    <input type="checkbox" id="toggle-chat">
+                    <span class="slider"></span>
+                    <span>Start a conversation</span>
+                </label>
+                <div id="chat-box" class="hidden">
+                    <div class="chat-header">
+                        <span>Raul</span>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="chat-content">
+                        <p>Hey! Thanks for reaching out. How may I help?</p>
+                        <p class="reply">Hi, I need some help regarding my account.</p>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" placeholder="Type a message...">
+                        <button>▶</button>
+                    </div>
+                </div>
+                <div id="rating-box" class="hidden">
+                    <div class="rating-header">
+                        <span>Raul - Customer Experience</span>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+                    <p>Select most applicable:</p>
+                    <div class="tags">
+                        <button>Easy to understand</button>
+                        <button>Quick response</button>
+                        <button>Polite</button>
+                        <button>Helpful</button>
+                    </div>
+                    <button class="submit-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
