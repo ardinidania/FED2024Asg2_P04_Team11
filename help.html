@@ -3,59 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .chat-box, .feedback-box {
-            display: none;
-            margin-top: 20px;
-        }
-        .message-container {
-            border: 1px solid #ccc;
-            padding: 10px;
-            max-height: 300px;
-            overflow-y: auto;
-            margin-bottom: 10px;
-            background-color: #f9f9f9;
-        }
-        .message {
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .user-message {
-            text-align: right;
-            color: blue;
-            background-color: #e3f2fd;
-        }
-        .agent-message {
-            text-align: left;
-            color: green;
-            background-color: #e8f5e9;
-        }
-        textarea, input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Help Page</h1>
@@ -160,6 +110,5 @@
             feedbackBox.style.display = 'block';
         }, 40000); // Simulate chat duration
     </script>
-    
 </body>
 </html>
