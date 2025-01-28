@@ -13,24 +13,45 @@ header {
     color: #fff;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
+/* Logo styling */
 .logo {
     font-size: 1.5em;
     font-weight: bold;
+    color: #fff;
 }
 
+/* Navigation container to handle alignment */
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Ensures left and right are spaced out */
+    flex-grow: 1; /* Makes the container take up all available space */
+    align-items: center;
+    margin-left: 20px;
+}
+
+/* Navigation links */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1em;
+}
+
+/* Authentication buttons and cart */
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .auth-buttons button {
@@ -38,10 +59,18 @@ header {
     border: none;
     color: #fff;
     padding: 5px 10px;
-    margin-left: 10px;
     cursor: pointer;
     border-radius: 4px;
 }
+
+/* Cart icon */
+.cart-icon {
+    font-size: 1.2em;
+    color: #fff;
+    cursor: pointer;
+}
+
+
 
 /* Hero Section */
 .hero {
