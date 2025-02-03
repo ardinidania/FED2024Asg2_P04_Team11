@@ -93,3 +93,49 @@ if (addProductButton) {
         showNotification("New product added successfully!");
     });
 }
+
+//========================================================================
+// Javascript for shopping page
+document.addEventListener("DOMContentLoaded", function () {
+    const checkboxes = document.querySelectorAll(".filter-checkbox");
+    const products = document.querySelectorAll(".product-card");
+    const searchButton = document.getElementById("searchFilters"); // Updated ID
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", function () {
+            updateFilters();
+        });
+    });
+
+    searchButton.addEventListener("click", function () {
+        updateFilters();
+    });
+
+    function updateFilters() {
+        const selectedFilters = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        // Keep the grid layout intact while hiding/showing products
+        products.forEach(product => {
+            const category = product.getAttribute("data-category");
+            if (selectedFilters.length === 0 || selectedFilters.includes(category)) {
+                product.style.opacity = "1";
+                product.style.pointerEvents = "auto";
+                product.style.visibility = "visible";
+                product.style.height = "auto";
+                product.style.transform = "scale(1)"; // Normal size
+            } else {
+                product.style.opacity = "0";
+                product.style.pointerEvents = "none";
+                product.style.visibility = "hidden";
+                product.style.height = "0px";
+                product.style.transform = "scale(0)"; // Shrinks without breaking layout
+            }
+        });
+    }
+});
+//======================================================================
+
+
+

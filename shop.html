@@ -34,93 +34,106 @@
             </div>
         </nav>
     </header>
+
     <section class="container">
+        <!-- Filter Section -->
         <section class="filter-section">
             <h3>Filter Products</h3>
+
             <h4>Brand</h4>
-            <label><input type="checkbox"> Apple</label>
-            <label><input type="checkbox"> Samsung</label>
+            <label><input type="checkbox" class="filter-checkbox" value="apple"> Apple</label>
+            <label><input type="checkbox" class="filter-checkbox" value="samsung"> Samsung</label>
 
             <h4>Type</h4>
-            <label><input type="checkbox"> Iphone</label>
-            <label><input type="checkbox"> Ipad</label>
-            <label><input type="checkbox"> Apple Displays (monitor)</label>
-            <label><input type="checkbox"> Macbook</label>
-            <label><input type="checkbox"> Airpods</label>
-            <label><input type="checkbox"> Apple Headphone</label>
-            <label><input type="checkbox"> Galaxy Phone</label>
-            <label><input type="checkbox"> Galaxy Tab</label>
-            <label><input type="checkbox"> Galaxy Buds</label>
-            <label><input type="checkbox"> Samsung Monitor</label>
-            <label><input type="checkbox"> Samsung Galaxy Book</label>
-            <button>Search</button>
+            <label><input type="checkbox" class="filter-checkbox" value="iphone"> iPhone</label>
+            <label><input type="checkbox" class="filter-checkbox" value="ipad"> iPad</label>
+            <label><input type="checkbox" class="filter-checkbox" value="apple_display"> Apple Displays (monitor)</label>
+            <label><input type="checkbox" class="filter-checkbox" value="macbook"> Macbook</label>
+            <label><input type="checkbox" class="filter-checkbox" value="airpods"> Airpods</label>
+            <label><input type="checkbox" class="filter-checkbox" value="apple_headphone"> Apple Headphone</label>
+            <label><input type="checkbox" class="filter-checkbox" value="galaxy_phone"> Galaxy Phone</label>
+            <label><input type="checkbox" class="filter-checkbox" value="galaxy_tab"> Galaxy Tab</label>
+            <label><input type="checkbox" class="filter-checkbox" value="galaxy_buds"> Galaxy Buds</label>
+            <label><input type="checkbox" class="filter-checkbox" value="samsung_monitor"> Samsung Monitor</label>
+            <label><input type="checkbox" class="filter-checkbox" value="samsung_galaxy_book"> Samsung Galaxy Book</label>
+
+            <button id="searchFilters">Search</button>
         </section>
+
+        <!-- Main Content -->
         <section class="main-content">
             <div class="search-bar">
                 <input type="text" placeholder="Search for products here...">
                 <button>&#128269;</button>
             </div>
+
+            <!-- Product Section -->
             <section class="products-section">
-                <section class="product-card">
-                    <img src="#" alt="Product">
+                <section class="product-card" data-category="iphone">
+                    <img src="Images/iphone image.png" alt="iPhone">
                     <div class="details">
-                        <h4>Product Title</h4>
-                        <p>Brief description of the product goes here.</p>
+                        <h4>iPhone</h4>
+                        <p>Apple iPhone description.</p>
                         <div class="buttons">
                             <button>Add to cart</button>
                             <button>Like</button>
                         </div>
                     </div>
                 </section>
-                <section class="product-card">
-                    <img src="#" alt="Product">
+
+                <section class="product-card" data-category="ipad">
+                    <img src="Images/ipad image.jpg" alt="iPad">
                     <div class="details">
-                        <h4>Product Title</h4>
-                        <p>Brief description of the product goes here.</p>
+                        <h4>iPad</h4>
+                        <p>Apple iPad description.</p>
                         <div class="buttons">
                             <button>Add to cart</button>
                             <button>Like</button>
                         </div>
                     </div>
                 </section>
-                <section class="product-card">
-                    <img src="#" alt="Product">
+
+                <section class="product-card" data-category="macbook">
+                    <img src="macbook.jpg" alt="Macbook">
                     <div class="details">
-                        <h4>Product Title</h4>
-                        <p>Brief description of the product goes here.</p>
+                        <h4>Macbook</h4>
+                        <p>Apple Macbook description.</p>
                         <div class="buttons">
                             <button>Add to cart</button>
                             <button>Like</button>
                         </div>
                     </div>
                 </section>
-                <section class="product-card">
-                    <img src="#" alt="Product">
+
+                <section class="product-card" data-category="airpods">
+                    <img src="airpods.jpg" alt="Airpods">
                     <div class="details">
-                        <h4>Product Title</h4>
-                        <p>Brief description of the product goes here.</p>
+                        <h4>Airpods</h4>
+                        <p>Apple Airpods description.</p>
                         <div class="buttons">
                             <button>Add to cart</button>
                             <button>Like</button>
                         </div>
                     </div>
                 </section>
-                <section class="product-card">
-                    <img src="#" alt="Product">
+
+                <section class="product-card" data-category="galaxy_phone">
+                    <img src="galaxy_phone.jpg" alt="Galaxy Phone">
                     <div class="details">
-                        <h4>Product Title</h4>
-                        <p>Brief description of the product goes here.</p>
+                        <h4>Galaxy Phone</h4>
+                        <p>Samsung Galaxy Phone description.</p>
                         <div class="buttons">
                             <button>Add to cart</button>
                             <button>Like</button>
                         </div>
                     </div>
                 </section>
-                <section class="product-card">
-                    <img src="#" alt="Product">
+
+                <section class="product-card" data-category="samsung_monitor">
+                    <img src="samsung_monitor.jpg" alt="Samsung Monitor">
                     <div class="details">
-                        <h4>Product Title</h4>
-                        <p>Brief description of the product goes here.</p>
+                        <h4>Samsung Monitor</h4>
+                        <p>Samsung Monitor description.</p>
                         <div class="buttons">
                             <button>Add to cart</button>
                             <button>Like</button>
@@ -129,9 +142,12 @@
                 </section>
             </section>
         </section>
-    </div>
-    </section> 
-    
+    </section>
     <footer>
         <p>&copy; 2025 MokeSell. All rights reserved.</p>
     </footer>
+    
+    
+
+    </body>
+    </html>
