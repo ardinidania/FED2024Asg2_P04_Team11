@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Page Title */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Form Styling */
+textarea, input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button, input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Sections */
+.initial-box, .chat-box, .feedback-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.chat-box {
+    display: none;
+}
+
+.feedback-box {
+    display: none;
+}
+
+/* Chat Message Container */
+.message-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: #ecf0f1;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Messages */
+.message {
+    max-width: 60%;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+/* User Messages (Right Alignment) */
+.user-message {
+    background-color: #d1e7fd; /* Light blue */
+    align-self: flex-end;
+    text-align: right;
+    border-radius: 20px 20px 5px 20px;
+    margin-left: auto;
+}
+
+/* Seller Messages (Left Alignment) */
+.agent-message {
+    background-color: #d4f4dd !important; /* Light green */
+    align-self: flex-start;
+    text-align: left;
+    border-radius: 20px 20px 20px 5px;
+    margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .message-container {
+        max-width: 90%;
+    }
+
+    .message {
+        max-width: 80%;
+    }
+}

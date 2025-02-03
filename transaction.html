@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="transaction.css">
+    <script src="transaction.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html" class="back-link">
+                <span class="arrow">&#8592;</span> <!-- Unicode left arrow -->
+            </a>
+            <h1>Transaction History</h1>
+        </div>
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th>Recipient</th>
+                    <th>Invoice</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="transaction-body">
+                <tr>
+                    <td><span class="avatar">S</span> Sam</td>
+                    <td>INV-001-123456</td>
+                    <td>16 Jan 2025</td>
+                    <td>$1899.00</td>
+                    <td>Singapore</td>
+                    <td>Completed</td>
+                </tr>
+                <tr class="review-row">
+                    <td colspan="6">Review: ⭐⭐⭐⭐⭐ | Comments: Seller was super patient</td>
+                </tr>
+                <tr>
+                    <td><span class="avatar">C</span> Cyrus</td>
+                    <td>INV-002-123456</td>
+                    <td>18 Jan 2025</td>
+                    <td>$299.00</td>
+                    <td>Singapore</td>
+                    <td>Cancelled</td>
+                </tr>
+                <tr class="review-row">
+                    <td colspan="6">Review: ⭐☆☆☆☆ | Comments: Seller had bad attitude</td>
+                </tr>
+            </tbody>
+
+            <!-- Hidden transactions -->
+            <tbody id="hidden-transactions" style="display: none;">
+                <tr>
+                    <td><span class="avatar">L</span> Leon</td>
+                    <td>INV-003-123456</td>
+                    <td>21 Jan 2025</td>
+                    <td>$75.00</td>
+                    <td>Singapore</td>
+                    <td>Pending</td>
+                </tr>
+                <tr class="review-row">
+                    <td colspan="6">Review: ⭐⭐⭐⭐☆ | Comments: Seller was helpful but slow</td>
+                </tr>
+                <tr>
+                    <td><span class="avatar">R</span> Ryder</td>
+                    <td>INV-004-123456</td>
+                    <td>22 Jan 2025</td>
+                    <td>$20.00</td>
+                    <td>Singapore</td>
+                    <td>Completed</td>
+                </tr>
+                <tr class="review-row">
+                    <td colspan="6">Review: ⭐⭐⭐⭐⭐ | Comments: Seller was helpful</td>
+                </tr>
+                <tr>
+                    <td><span class="avatar">X</span> Xavier</td>
+                    <td>INV-005-123456</td>
+                    <td>28 Jan 2025</td>
+                    <td>$300.00</td>
+                    <td>Singapore</td>
+                    <td>Cancelled</td>
+                </tr>
+                <tr class="review-row">
+                    <td colspan="6">Review: ⭐☆☆☆☆ | Comments: Seller had bad attitude</td>
+                </tr>
+                <tr>
+                    <td><span class="avatar">A</span> Alex</td>
+                    <td>INV-006-123456</td>
+                    <td>30 Jan 2025</td>
+                    <td>$500.00</td>
+                    <td>Singapore</td>
+                    <td>Completed</td>
+                </tr>
+                <tr class="review-row">
+                    <td colspan="6">Review: ⭐⭐⭐⭐⭐ | Comments: Smooth transaction and great experience</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Show More Button -->
+        <button id="show-more-btn" class="show-more-btn">Show More</button>
+    </div>
+</body>
+</html>
