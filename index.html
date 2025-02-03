@@ -20,12 +20,14 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="nav-container">
             <div class="logo">MokeSell</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
                 <li><a href="shop.html">Shop</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="about-you.html">About You</a></li>
                 <li><a href="chat.html">Chat</a></li>
                 <li><a href="offer.html">Offer</a></li>
                 <li><a href="notification.html">Notifications</a></li>
@@ -33,49 +35,98 @@
                 <li><a href="review.html">Ratings and Reviews</a></li>
             </ul>
             <div class="auth-buttons">
-                <button id="login-btn">Login</button>
-                <button id="register-btn">Register</button>
+                <span id="auth-toggle">Login / Register</span>
             </div>
         </nav>
     </header>
     
-
+    <!-- Hero Section -->
     <main>
         <section id="home" class="hero">
-            <h1>Affordable Apple & Samsung Products</h1>
-            <button class="shop-now">Shop Now</button>
+            <!-- Left Side: Text Content -->
+            <div class="hero-content">
+                <h1>Affordable Apple & Samsung Products</h1>
+                <div class="shop-button-container">
+                    <a href="shop.html" class="shop-now">Shop Now</a>
+                </div>
+            </div>
+    
+            <!-- Right Side: Image -->
+            <div class="hero-image">
+                <img src="home-image.png" alt="Electronics showcase">
+            </div>
         </section>
 
-        <section id="account-creation" class="account-section">
-            <div class="login-form">
+
+        <!-- Account Section -->
+        <section id="account-section" class="account-container hidden">
+           <div class="account-wrapper">
+           <!-- Left Side (Login Form) -->
+           <div class="account-box">
+            <button id="close-account" class="close-btn">✖️</button> <!-- Close button -->
+            <div id="login-form">
                 <h2>Login to your account</h2>
-                <form id="login-form">
+                <form>
                     <input type="email" placeholder="Email" required>
                     <input type="password" placeholder="Password" required>
-                    <button type="submit">Login</button>
+                    <div class="error-message" style="color: red; font-size: 14px; margin-top: 5px;"></div>
+                    <button id="login-btn" class="form-button">Login now</button>
                 </form>
-                <p>Don't have an account? <a href="#">Sign Up</a></p>
+                <p>Don't have an account? <a href="#" id="show-register">Sign up</a></p>
             </div>
 
-            <div class="register-form">
+            <!-- Register Form (Initially Hidden) -->
+            <div id="register-form" class="hidden">
                 <h2>Create an account</h2>
-                <form id="register-form">
-                    <button type="button" class="google-signup">Sign up with Google</button>
-                    <p>OR</p>
+                <!-- Google Sign-In -->
+                <div id="g_id_onload"
+                data-client_id="635387862269-le910fd2692950eossu72bq321c7lcie.apps.googleusercontent.com"
+                data-context="signin"
+                data-ux_mode="popup"
+                data-callback="handleCredentialResponse"
+                data-auto_prompt="false">
+                </div>
+
+                <div class="g_id_signin"
+                data-type="standard"
+                data-shape="rectangular"
+                data-theme="outline"
+                data-text="signin_with"
+                data-size="large">
+                </div>
+
+                <p>OR</p>
+                <form>
                     <input type="email" placeholder="Email" required>
                     <input type="password" placeholder="Password" required>
-                    <button type="submit">Create Account</button>
-                </form>
-                <p>Already have an account? <a href="#">Login</a></p>
+                    <div class="error-message" style="color: red; font-size: 14px; margin-top: 5px;"></div>
+                    <button id="create-account-btn" class="form-button">Create account</button>
+                </form>               
+                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
             </div>
-        </section>
+        </div>
 
+        <!-- Right Side (Background) -->
+        <div class="account-bg"></div>
+        </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 MokeSell. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Lottie Animation Overlay (Initially Hidden) -->
+    <div id="loading-animation" class="loading-overlay hidden">
+        <dotlottie-player src="https://lottie.host/98ff042d-de92-4096-bc0d-a7dbcee1ffa1/aQfpWmZhTy.lottie"
+                          background="transparent"
+                          speed="1"
+                          style="width: 300px; height: 300px;"
+                          loop
+                          autoplay>
+        </dotlottie-player>
+    </div>
+
 </body>
 </html>

@@ -9,6 +9,7 @@ function toggleVisibility(elementId) {
     }
 }
 
+
 // Event Listener for Login Button
 const loginButton = document.getElementById("loginButton");
 if (loginButton) {
@@ -135,7 +136,247 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-//======================================================================
 
+
+//======================================================================
+// Follow Feature Page
+document.addEventListener("DOMContentLoaded", function () {
+    const followButton = document.getElementById("follow-btn");
+    const chatButton = document.getElementById("chat-btn");
+    const tabLinks = document.querySelectorAll(".tab-link");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    // Follow Button
+    if (followButton) {
+        followButton.addEventListener("click", function () {
+            if (followButton.textContent === "Follow") {
+                followButton.textContent = "Following";
+                followButton.style.backgroundColor = "#219150"; // Softer green
+            } else {
+                followButton.textContent = "Follow";
+                followButton.style.backgroundColor = "#27ae60"; // Default
+            }
+        });
+    }
+
+    // Chat Button
+    if (chatButton) {
+        chatButton.addEventListener("click", function () {
+            alert("Opening chat with seller...");
+        });
+    }
+
+    // Tab Switching (Products & Reviews)
+    tabLinks.forEach((tab) => {
+        tab.addEventListener("click", function () {
+            tabLinks.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            tabContents.forEach(content => content.classList.remove("active"));
+            document.getElementById(tab.getAttribute("data-tab")).classList.add("active");
+        });
+    });
+});
+
+//========================================================================
+// Login / Register
+document.addEventListener("DOMContentLoaded", function () {
+    const authToggle = document.getElementById("auth-toggle");
+    const accountSection = document.getElementById("account-section");
+    const loginForm = document.getElementById("login-form");
+    const registerForm = document.getElementById("register-form");
+    const showLogin = document.getElementById("show-login");
+    const showRegister = document.getElementById("show-register");
+    const closeAccount = document.getElementById("close-account");
+
+    const loginButton = document.getElementById("login-btn");
+    const createAccountButton = document.getElementById("create-account-btn");
+    const cancelButtons = document.querySelectorAll(".cancel-button");
+
+    const loadingOverlay = document.getElementById("loading-animation");
+
+    // Ensure Lottie animation is hidden on load
+    if (loadingOverlay) {
+        loadingOverlay.classList.add("hidden");
+    }
+
+    // Show Login/Register popup
+    if (authToggle) {
+        authToggle.addEventListener("click", function () {
+            accountSection.classList.toggle("hidden");
+        });
+    }
+
+    if (closeAccount) {
+        closeAccount.addEventListener("click", function () {
+            accountSection.classList.add("hidden");
+        });
+    }
+
+    if (showRegister) {
+        showRegister.addEventListener("click", function (e) {
+            e.preventDefault();
+            loginForm.classList.add("hidden");
+            registerForm.classList.remove("hidden");
+        });
+    }
+
+    if (showLogin) {
+        showLogin.addEventListener("click", function (e) {
+            e.preventDefault();
+            registerForm.classList.add("hidden");
+            loginForm.classList.remove("hidden");
+        });
+    }
+
+    // Function to validate fields
+    function validateForm(email, password, errorContainer) {
+        let errors = [];
+
+        if (!email.value.includes("@")) {
+            errors.push("❌ Please enter a valid email address.");
+        }
+        if (password.value.trim() === "") {
+            errors.push("❌ Password cannot be empty.");
+        }
+
+        if (errors.length > 0) {
+            errorContainer.innerHTML = errors.join("<br>");
+            return false;
+        } else {
+            errorContainer.innerHTML = ""; // Clear errors
+            return true;
+        }
+    }
+
+    // Show Lottie Animation then Redirect
+    function showLoadingAndRedirect() {
+        if (!loadingOverlay) {
+            console.error("❌ Lottie animation element not found!");
+            return;
+        }
+
+        loadingOverlay.classList.remove("hidden"); // Show animation
+
+        setTimeout(() => {
+            loadingOverlay.classList.add("hidden");
+            window.location.href = "shop.html";
+        }, 2000);
+    }
+
+    // Handle Login
+    if (loginButton) {
+        loginButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            const emailInput = document.querySelector("#login-form input[type='email']");
+            const passwordInput = document.querySelector("#login-form input[type='password']");
+            const errorContainer = document.querySelector("#login-form .error-message");
+
+            if (validateForm(emailInput, passwordInput, errorContainer)) {
+                showLoadingAndRedirect();
+            }
+        });
+    }
+
+    // Handle Sign Up
+    if (createAccountButton) {
+        createAccountButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            const emailInput = document.querySelector("#register-form input[type='email']");
+            const passwordInput = document.querySelector("#register-form input[type='password']");
+            const errorContainer = document.querySelector("#register-form .error-message");
+
+            if (validateForm(emailInput, passwordInput, errorContainer)) {
+                showLoadingAndRedirect();
+            }
+        });
+    }
+
+    // Clear fields when cancel is clicked
+    cancelButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            document.querySelectorAll("input").forEach(input => input.value = "");
+        });
+    });
+
+    // Hide Login/Register on non-home pages
+    const authContainer = document.getElementById("auth-container");
+    const currentPage = window.location.pathname;
+    const hideAuthPages = ["/about-you.html", "/shop.html", "/listings.html", "/help.html"];
+
+    if (hideAuthPages.some(page => currentPage.endsWith(page))) {
+        if (authContainer) {
+            authContainer.style.display = "none";
+        }
+    }
+});
+
+//========================================================================
+// Account Settings (About You Page)
+document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.getElementById("file-input");
+    const profilePic = document.getElementById("profile-pic");
+    const uploadButton = document.getElementById("upload-btn");
+    const saveButton = document.querySelector(".save-button");
+    const cancelButton = document.querySelector(".cancel-button");
+    const lottieOverlay = document.getElementById("lottie-overlay");
+
+    // Default profile picture path
+    const defaultAvatar = "default-avatar.png";
+
+    // Handle Profile Picture Upload
+    if (fileInput && profilePic && uploadButton) {
+        uploadButton.addEventListener("click", function () {
+            fileInput.click(); // Simulate click on hidden file input
+        });
+
+        fileInput.addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    profilePic.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    // Handle Cancel Button - Clear Inputs
+    if (cancelButton) {
+        cancelButton.addEventListener("click", function () {
+            document.getElementById("name").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("email").value = "";
+            profilePic.src = defaultAvatar; // Reset profile picture
+            fileInput.value = ""; // Clear file input
+        });
+    }
+
+    // Show Lottie Animation when Saving
+    if (saveButton) {
+        saveButton.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Ensure fields are filled before saving
+            const nameValue = document.getElementById("name").value.trim();
+            const passwordValue = document.getElementById("password").value.trim();
+            const emailValue = document.getElementById("email").value.trim();
+
+            if (nameValue === "" || passwordValue === "" || emailValue === "") {
+                alert("⚠️ Please fill out all fields before saving.");
+                return;
+            }
+
+            // Show Lottie Animation
+            lottieOverlay.classList.remove("hidden");
+
+            setTimeout(() => {
+                lottieOverlay.classList.add("hidden");
+                alert("✅ Changes Saved Successfully!");
+            }, 2000);
+        });
+    }
+});
 
 
