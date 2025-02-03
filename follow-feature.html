@@ -29,7 +29,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
                 <li><a href="shop.html">Shop</a></li>
-                <li><a href="help.html">Help</a></li>
                 <li><a href="about-you.html">About You</a></li>
             </ul>
             <div class="auth-buttons">
@@ -46,33 +45,34 @@
             <div class="profile-picture"></div>
             <div class="profile-details">
                 <span class="profile-name">John Goh</span>
-                <button id="chat-btn" class="chat-button">Chat with Seller</button>
+                <button id="chat-btn" class="chat-button" onclick="window.location.href='chat.html';">Chat with Seller</button>
+
             </div>
             <button id="follow-btn" class="follow-button">Follow</button>
         </div>
 
         <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab-link active" data-tab="products">Products</button>
-            <button class="tab-link" data-tab="reviews">Reviews</button>
-        </div>
+<div class="tabs">
+    <button class="tab-link active" data-tab="products">Products</button>
+    <button class="tab-link" data-tab="reviews">Reviews</button>
+</div>
 
-        <!-- Products Section -->
-        <div id="products" class="tab-content active">
-            <h2>Products</h2>
-            <div class="product-list">
-                <div class="product-item"></div>
-                <div class="product-item"></div>
-                <div class="product-item"></div>
-                <div class="product-item"></div>
-            </div>
-        </div>
+<!-- Tab Content Sections -->
+<div id="products" class="tab-content active">
+    <h2>Products</h2>
+    <div class="product-list">
+        <div class="product-item"></div>
+        <div class="product-item"></div>
+        <div class="product-item"></div>
+        <div class="product-item"></div>
+    </div>
+</div>
 
-        <!-- Reviews Section -->
-        <div id="reviews" class="tab-content">
-            <h2>Reviews</h2>
-            <p>No reviews yet.</p>
-        </div>
+<div id="reviews" class="tab-content">
+    <h2>Reviews</h2>
+    <p>No reviews yet.</p>
+</div>
+
     </main>
 
     <footer>
