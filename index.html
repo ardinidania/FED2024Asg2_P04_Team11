@@ -1,37 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    
+    <!-- Correct CSS -->
+    <link rel="stylesheet" href="home.css">
+
+    <!-- JS Files -->
+    <script src="home.js" defer></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+    <!-- Chat Widget -->
     <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/67933421825083258e0a6ece/1iibg790o';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/67933421825083258e0a6ece/1iibg790o';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <header>
-        <nav class="nav-container">
         <nav class="nav-container">
             <div class="logo">MokeSell</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
                 <li><a href="shop.html">Shop</a></li>
-                <li><a href="help.html">Help</a></li>
-                <li><a href="about-you.html">About You</a></li>
                 <li><a href="help.html">Help</a></li>
                 <li><a href="about-you.html">About You</a></li>
                 <li><a href="chat.html">Chat</a></li>
@@ -46,81 +51,64 @@
         </nav>
     </header>
     
-    <!-- Hero Section -->
+    <!-- ✅ Corrected Hero Section -->
     <main>
-        <section id="home" class="hero">
-            <!-- Left Side: Text Content -->
+        <section class="hero">
             <div class="hero-content">
                 <h1>Affordable Apple & Samsung Products</h1>
                 <div class="shop-button-container">
                     <a href="shop.html" class="shop-now">Shop Now</a>
                 </div>
             </div>
-    
-            <!-- Right Side: Image -->
-            <div class="hero-image">
-                <img src="home-image.png" alt="Electronics showcase">
-            </div>
-            <!-- Left Side: Text Content -->
-            <div class="hero-content">
-                <h1>Affordable Apple & Samsung Products</h1>
-                <div class="shop-button-container">
-                    <a href="shop.html" class="shop-now">Shop Now</a>
-                </div>
-            </div>
-    
-            <!-- Right Side: Image -->
+
             <div class="hero-image">
                 <img src="home-image.png" alt="Electronics showcase">
             </div>
         </section>
 
-        <section id="account-creation" class="account-section">
-            <div class="login-form">
-                <h2>Login to your account</h2>
-                <form>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
-                    <div class="error-message" style="color: red; font-size: 14px; margin-top: 5px;"></div>
-                    <button id="login-btn" class="form-button">Login now</button>
-                </form>
-                <p>Don't have an account? <a href="#" id="show-register">Sign up</a></p>
-            </div>
+        <!-- Login/Register Popup -->
+        <section id="account-section" class="account-container hidden">
+            <div class="account-wrapper">
+                <!-- Left Side: Login/Register -->
+                <div class="account-box">
+                    <button id="close-account" class="close-btn">✖</button>
 
-            <!-- Register Form (Initially Hidden) -->
-            <div id="register-form" class="hidden">
-                <h2>Create an account</h2>
-                <!-- Google Sign-In -->
-                <div id="g_id_onload"
-                data-client_id="635387862269-le910fd2692950eossu72bq321c7lcie.apps.googleusercontent.com"
-                data-context="signin"
-                data-ux_mode="popup"
-                data-callback="handleCredentialResponse"
-                data-auto_prompt="false">
+                    <div id="login-form">
+                        <h2>Login to your account</h2>
+                        <form>
+                            <input type="email" placeholder="Email" required>
+                            <input type="password" placeholder="Password" required>
+                            <div class="error-message"></div>
+                            <button id="login-btn" class="form-button">Login now</button>
+                        </form>
+                        <p>Don't have an account? <a href="#" id="show-register">Sign up</a></p>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div id="register-form" class="hidden">
+                        <h2>Create an account</h2>
+                        <div id="g_id_onload" data-client_id="635387862269-le910fd2692950eossu72bq321c7lcie.apps.googleusercontent.com" 
+                            data-context="signin" data-ux_mode="popup" 
+                            data-callback="handleCredentialResponse" 
+                            data-auto_prompt="false">
+                        </div>
+                        <div class="g_id_signin" data-type="standard" data-shape="rectangular"
+                            data-theme="outline" data-text="signin_with" data-size="large">
+                        </div>
+                        <p>OR</p>
+                        <form>
+                            <input type="email" placeholder="Email" required>
+                            <input type="password" placeholder="Password" required>
+                            <div class="error-message"></div>
+                            <button id="create-account-btn" class="form-button">Create account</button>
+                        </form>
+                        <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+                    </div>
                 </div>
 
-                <div class="g_id_signin"
-                data-type="standard"
-                data-shape="rectangular"
-                data-theme="outline"
-                data-text="signin_with"
-                data-size="large">
-                </div>
-
-                <p>OR</p>
-                <form>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
-                    <div class="error-message" style="color: red; font-size: 14px; margin-top: 5px;"></div>
-                    <button id="create-account-btn" class="form-button">Create account</button>
-                </form>               
-                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+                <!-- Right Side (Dark Background) -->
+                <div class="account-bg"></div>
             </div>
-        </div>
-
-        <!-- Right Side (Background) -->
-        <div class="account-bg"></div>
-        </div>
         </section>
     </main>
 
@@ -129,14 +117,13 @@
         <p>&copy; 2025 MokeSell. All rights reserved.</p>
     </footer>
 
-    <!-- Lottie Animation Overlay (Initially Hidden) -->
+    <!-- ✅ Lottie Animation for Loading -->
     <div id="loading-animation" class="loading-overlay hidden">
         <dotlottie-player src="https://lottie.host/98ff042d-de92-4096-bc0d-a7dbcee1ffa1/aQfpWmZhTy.lottie"
                           background="transparent"
                           speed="1"
                           style="width: 300px; height: 300px;"
-                          loop
-                          autoplay>
+                          loop autoplay>
         </dotlottie-player>
     </div>
 
