@@ -14,13 +14,14 @@ header {
     padding: 15px 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Space between logo, nav links, and auth buttons */
 }
 
 /* Logo */
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: white;
+    color: #fff;
 }
 
 /* Navigation */
@@ -117,41 +118,18 @@ header {
     border: none;
     background: none;
     cursor: pointer;
-    color: black;
-}
-
-/* Input Fields */
-form input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1em;
-    background: white;
-    color: black;
 }
 
-/* Button Styling */
-.form-button {
-    background: linear-gradient(to right, #444, #222); /* Dark gradient */
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 1em;
+/* Cart icon */
+.cart-icon {
+    font-size: 1.2em;
+    color: #fff;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s ease-in-out;
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto 0;
-}
-
-.form-button:hover {
-    background: linear-gradient(to right, #666, #333);
 }
 
 
-/**********************************************************************************/
+
 /* Hero Section */
 /* HERO SECTION - Full Width */
 .hero {
