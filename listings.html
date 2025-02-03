@@ -26,7 +26,9 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
                 <li><a href="shop.html">Shop</a></li>
-                <li><a href="help.html">Help</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="offer.html">Offer</a></li>
+                <li><a href="notification.html">Notifications</a></li>
             </ul>
             <div class="auth-buttons">
                 <button id="login-btn">Login</button>
@@ -35,23 +37,55 @@
         </nav>
     </header>
 
-    <section id="listings" class="create-listing">
-        <h2>List your products</h2>
-        <div class="categories">
-            <div class="category apple">
-                <h3>Apple Products</h3>
-                <div class="product-placeholder">Image Here</div>
+    <div class="product-listing-page"> 
+        <main class="container">
+            
+            <!-- List Your Products Section -->
+            <div class="list-products-container">
+                <h2 class="section-title">List your products</h2>
+                <section class="list-products">
+                    <div class="upload-box">
+                        <div class="upload-icon">
+                            <img src="upload-icon.png" alt="Upload Icon">
+                        </div>
+                        <button>Select photos</button>
+                        <p>or drag photos here <br> (up to 30 photos)</p>
+                    </div>
+                </section>
             </div>
-            <div class="category samsung">
-                <h3>Samsung Products</h3>
-                <div class="product-placeholder">Image Here</div>
+
+            <!-- Sell to MokeSell Section -->
+            <div class="sell-section-container">
+                <h2 class="section-title">Sell to MokeSell</h2>
+                <section class="sell-section">
+                    <section class="product-category">
+                        <h3>Apple Products</h3>
+                        <div class="product-grid">
+                            <div class="product-box"><img src="Images/ipad 2.jpeg" alt="Apple Product - ipad"></div>
+                            <div class="product-box"><img src="placeholder.png" alt="Apple Product"></div>
+                            <div class="product-box"><img src="placeholder.png" alt="Apple Product"></div>
+                            <div class="product-box"><img src="placeholder.png" alt="Apple Product"></div>
+                        </div>
+                    </section>
+
+                    <section class="product-category">
+                        <h3>Samsung Products</h3>
+                        <div class="product-grid">
+                            <div class="product-box"><img src="placeholder.png" alt="Samsung Product"></div>
+                            <div class="product-box"><img src="placeholder.png" alt="Samsung Product"></div>
+                            <div class="product-box"><img src="placeholder.png" alt="Samsung Product"></div>
+                            <div class="product-box"><img src="placeholder.png" alt="Samsung Product"></div>
+                        </div>
+                    </section>
+                </section>
             </div>
-        </div>
-    </section>
+
+        </main>
+    </div> 
 
     <footer>
         <p>&copy; 2025 MokeSell. All rights reserved.</p>
     </footer>
+</body>
 
-    </body>
     </html>

@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 95%;
+    margin: 20px auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.back-link:hover {
+    color: #0056b3;
+}
+
+.arrow {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.transaction-table th, .transaction-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.transaction-table thead {
+    background-color: #007bff;
+    color: white;
+}
+
+.transaction-table .avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.review-row {
+    background-color: #f9f9f9;
+    font-style: italic;
+    color: #555;
+}
+
+.review-row td {
+    border: none;
+    padding: 10px;
+}
+
+/* Show More Button */
+.show-more-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 20px 0;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.show-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .transaction-table th, .transaction-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .avatar {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Notifications</title>
+    <link rel="stylesheet" href="notification.css">
+</head>
+<body>
+    <header>
+        <div class="notification-header">
+            <a href="index.html" class="arrow-link">
+                <span class="arrow-icon">←</span>
+                </a>
+            <h1>Notifications</h1>
+            <div class="notification-bell">
+                <span class="bell-icon">🔔</span>
+                <span class="notification-dot"></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="notifications-container">
+        <div class="notification-card new-listing">
+            <img src="og-airpods-max-202011.jpg" alt="Airpods Pro Max" class="listing-image">
+            <div class="notification-content">
+                <h2>New Listing</h2>
+                <p>Apple Airpods Pro Max has been added to the store</p>
+                <div class="notification-actions">
+                    <button class="btn open-btn">Open</button>
+                    <button class="btn close-btn">Close</button>
+                </div>
+                <small class="timestamp">5 mins ago</small>
+            </div>
+        </div>
+        
+        <!-- Modal for Enlarged Image -->
+        <div id="image-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img src="og-airpods-max-202011.jpg" alt="Airpods Pro Max Enlarged" class="enlarged-image">
+            </div>
+        </div>
+        
+
+        <div class="notification-card offer">
+            <div class="notification-content">
+                <p><strong>New Offer!</strong> Buy any 2 items for 20% OFF. Lasts till next week</p>
+                <small class="timestamp">10 mins ago</small>
+            </div>
+        </div>
+
+        <div class="notification-card reply">
+            <div class="notification-content">
+                <p><strong>New Message from Sam (Seller):</strong> "Yes, this product is available?"</p>
+                <small class="timestamp">30 mins ago</small>
+            </div>
+        </div>
+
+        <div class="notification-card promo">
+            <div class="notification-content">
+                <p><strong>Promotion:</strong> Get 30% off on your next purchase! Limited time offer.</p>
+                <a href="shop.html" class="btn promo-btn">Shop Now</a>
+                <small class="timestamp">1 hour ago</small>
+            </div>
+        </div>
+        
+        <div class="notification-card update-alert">
+            <div class="notification-content">
+                <p><strong>App Update:</strong> Version 2.0 is now available! Click to update and enjoy new features.</p>
+                <button class="btn update-btn">Update</button>
+                <small class="timestamp">2 hours ago</small>
+            </div>
+        </div>
+    
+        <!-- Order Update Notification -->
+<div class="notification-card order-update">
+    <div class="notification-content">
+        <p><strong>Order Update:</strong> Your order #12345 has been shipped and is on the way!</p>
+        <button class="btn order-details-btn">See Order Details</button>
+        <small class="timestamp">3 days ago</small>
+    </div>
+</div>
+
+<!-- Custom Order Details Modal -->
+<div id="order-details-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Order Details</h2>
+        <p><strong>Order Number:</strong> #12345</p>
+        <p><strong>Product:</strong> Apple AirPods Pro Max</p>
+        <p><strong>Status:</strong> Shipped</p>
+        <p><strong>Estimated Delivery:</strong> February 1, 2025</p>
+        <p><strong>Shipping Address:</strong> 123 Orchard Road, Singapore 238888</p>
+    </div>
+</div>
+
+        
+        <!-- Show More Toggle -->
+<div class="show-more-container">
+    <span class="arrow-icon">▼</span>
+    <span class="show-more-text">Show More</span>
+</div>
+        
+<!-- Hidden notifications -->
+<div class="additional-notifications" style="display: none;">
+    <div class="notification-card reminder">
+        <div class="notification-content">
+            <p><strong>Reminder:</strong> You have pending payment for your order. Order #12346.</p>
+            <small class="timestamp">4 days ago</small>
+        </div>
+    </div>
+
+    <div class="notification-card message">
+        <div class="notification-content">
+            <p><strong>New Message from Alex (Seller):</strong> "Your offer submission was rejected."</p>
+            <small class="timestamp">1 week ago</small>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <script src="notification.js"></script>
+</body>
+</html>
