@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/67933421825083258e0a6ece/1iibg790o';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">MokeSell</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="about-you.html">About You</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <span id="auth-toggle">Login / Register</span>
+            </div>
+        </nav>
+    </header>
+
+  <!-- Main Settings Section -->
+  <div class="settings-container">
+    <h2>Account Settings</h2>
+    <p>Edit your name, email, and password.</p>
+
+    <div class="settings-box">
+        <!-- Profile Picture Upload -->
+        <div class="profile-picture-section">
+            <div class="profile-picture">
+                <img id="profile-pic" src="default-avatar.png" alt="Profile Picture">
+            </div>
+            <button class="upload-button" id="upload-btn">Upload a picture</button>
+            <input type="file" id="file-input" accept="image/*" hidden>
+        </div>
+
+        <!-- Account Info Form -->
+        <form id="account-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter new password">
+            <a href="#" class="change-link">Change</a>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <a href="#" class="change-link">Change</a>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button type="button" class="cancel-button">Cancel</button>
+                <button type="submit" class="save-button">Save</button>
+            </div>
+        </form>
+        </div>
+    </div>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 MokeSell. All rights reserved.</p>
+    </footer>
+
+    <!-- Lottie Animation Overlay (Initially Hidden) -->
+    <div id="lottie-overlay" class="hidden">
+    <div class="lottie-container">
+        <dotlottie-player 
+            id="lottie-player"
+            src="https://lottie.host/90c35e5c-60d5-4851-92b4-c81d20ac47b8/eaFzcAjYjB.lottie"
+            background="transparent"
+            speed="1"
+            style="width: 300px; height: 300px"
+            autoplay>
+        </dotlottie-player>
+        <p class="saved-text">Saved</p>
+    </div>
+    </div>
+
+
+</body>
+</html>
+
