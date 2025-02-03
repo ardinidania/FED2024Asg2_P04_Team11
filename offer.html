@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
-    <link rel="stylesheet" href="help.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="offer.css">
+    <script src="offer.js"></script>
+    <style>
+        .chat-box, .feedback-box, .offer-box {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Help Page</h1>
+
+    <h1>Offer Page</h1>
     
     <!-- Initial Message Box -->
     <div class="initial-box">
@@ -18,12 +24,12 @@
     
     <!-- Chat Box -->
     <div class="chat-box">
-        <h2>Chat with Customer Care</h2>
+        <h2>Chat with Seller</h2>
         <div class="message-container" id="messageContainer"></div>
         <textarea id="userChatMessage" placeholder="Type your message..."></textarea><br>
         <button id="sendChatMessage">Send</button>
     </div>
-    
+
     <!-- Feedback Box -->
     <div class="feedback-box">
         <h2>Rate Your Experience</h2>
@@ -40,55 +46,92 @@
         const sendMessageBtn = document.getElementById('sendMessage');
         const initialMessage = document.getElementById('initialMessage');
         const chatBox = document.querySelector('.chat-box');
-        const feedbackBox = document.querySelector('.feedback-box');
         const messageContainer = document.getElementById('messageContainer');
         const sendChatMessageBtn = document.getElementById('sendChatMessage');
         const userChatMessage = document.getElementById('userChatMessage');
+        
+        // Feedback elements
         const submitFeedbackBtn = document.getElementById('submitFeedback');
         const ratingInput = document.getElementById('rating');
         const feedbackInput = document.getElementById('feedback');
+        const feedbackBox = document.querySelector('.feedback-box');
 
         let messages = [];
+        let agentResponseIndex = 0;
 
-        // Simulate sending an initial message
+        const agentResponses = [
+            "Thanks for reaching out, yes you can offer a price and I will see if it can be approved.",
+            "I have submitted your offer, let me check with the system to see if it is approved. One moment please!",
+            "Great news, your offered price has been approved, you can now proceed to make payment.",
+            "Absolutely, here is the link to pay securely: <a href='https://mokesell/payment.com' target='_blank'>https://mokesell/payment.com</a>",
+            "Great, you can pick it up today at the store at the timing you've selected. Thank you!"
+        ];
+
+        // Show chat box on initial message send
         sendMessageBtn.addEventListener('click', () => {
             const message = initialMessage.value.trim();
             if (message) {
-                alert("Message sent! Please wait while we connect you to customer care.");
+                alert("Message sent! Please wait while we connect you to a Seller.");
                 setTimeout(() => {
                     chatBox.style.display = 'block';
-                }, 3000); // Simulate wait time
+                }, 3000);
                 initialMessage.value = '';
             } else {
                 alert("Please enter a message before sending.");
             }
         });
 
-        // Simulate sending chat messages
-        sendChatMessageBtn.addEventListener('click', () => {
-            const message = userChatMessage.value.trim();
-            if (message) {
-                messages.push({ sender: 'user', text: message });
-                displayMessages();
-                userChatMessage.value = '';
+        // Function to send user message and trigger agent response sequentially
+        function sendMessage() {
+            const messageText = userChatMessage.value.trim();
+            if (messageText === '') {
+                alert('Please type a message before sending.');
+                return;
+            }
 
-                // Simulate customer care response
+            // Append user's message
+            messages.push({ sender: 'user', text: messageText });
+            displayMessages();
+            userChatMessage.value = '';
+
+            // Show seller's response after a delay
+            if (agentResponseIndex < agentResponses.length) {
                 setTimeout(() => {
-                    messages.push({ sender: 'agent', text: 'Thank you for reaching out. How can I help you?' });
+                    messages.push({ sender: 'seller', text: agentResponses[agentResponseIndex] });
+                    agentResponseIndex++;
                     displayMessages();
-                }, 1500);
+                    if (agentResponseIndex === agentResponses.length) {
+                        setTimeout(() => {
+                            feedbackBox.style.display = 'block';
+                        }, 3000);
+                    }
+                }, 2000); // Delay of 2 seconds before agent response
+            }
+        }
+
+        // Event listener for send button click
+        sendChatMessageBtn.addEventListener('click', sendMessage);
+
+        // Event listener for 'Enter' key to send message
+        userChatMessage.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
             }
         });
 
+        // Function to display messages
         function displayMessages() {
             messageContainer.innerHTML = messages.map(msg => 
-                `<div class="message ${msg.sender === 'user' ? 'user-message' : 'agent-message'}">
+                `<div class="message ${msg.sender === 'user' ? 'user-message' : 'seller-message'}">
                     ${msg.text}
-                </div>`).join('');
+                </div>`
+            ).join('');
+            messageContainer.scrollTop = messageContainer.scrollHeight;
         }
 
-        // Handle feedback submission
-        submitFeedbackBtn.addEventListener('click', () => {
+         // Handle feedback submission
+         submitFeedbackBtn.addEventListener('click', () => {
             const rating = parseInt(ratingInput.value);
             const feedback = feedbackInput.value.trim();
 
@@ -108,7 +151,12 @@
         // Show feedback box after chat ends
         setTimeout(() => {
             feedbackBox.style.display = 'block';
-        }, 40000); // Simulate chat duration
+        }, 20000); // Simulate chat duration
+
     </script>
+
+<footer>
+    <p>&copy; 2025 MokeSell. All rights reserved.</p>
+</footer>
 </body>
 </html>

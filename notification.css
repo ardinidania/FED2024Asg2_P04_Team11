@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #fff;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Notification icon */
+.notification-bell {
+    position: relative;
+    font-size: 28px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* Container and card styles */
+.notifications-container {
+    padding: 20px;
+}
+
+.notification-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+/* Listing image */
+.listing-image {
+    width: 100px;
+    height: 60px;
+    background-color: #ccc;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+/* Notification text */
+.notification-content h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.notification-content p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    width: 150px; /* Ensure buttons are the same width */
+}
+
+/* Specific button styles */
+.open-btn {
+    background-color: #007bff;
+}
+
+.open-btn:hover {
+    background-color: #0056b3;
+}
+
+.close-btn {
+    background-color: #ddd;
+    color: #333;
+}
+
+.close-btn:hover {
+    background-color: #bbb;
+}
+
+.promo-btn {
+    background-color: #ff9800;
+}
+
+.promo-btn:hover {
+    background-color: #e68a00;
+}
+
+.update-btn {
+    background-color: #28a745;
+}
+
+.update-btn:hover {
+    background-color: #218838;
+}
+
+.track-btn,
+.order-details-btn {
+    background-color: #007bff;
+}
+
+.track-btn:hover,
+.order-details-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Timestamp styles */
+.timestamp {
+    font-size: 12px;
+    color: #888;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex; /* Flex layout to enable centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Prevent scrollbars on the modal itself */
+}
+
+/* Center and contain modal content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for modal */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+/* Responsive image inside the modal */
+.enlarged-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Modal heading */
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Modal text */
+.modal-content p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Close button */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Show More toggle */
+.show-more-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.arrow-icon {
+    font-size: 16px;
+    margin-right: 5px;
+    transition: transform 0.2s ease;
+}
+
+.show-more-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.show-more-container:hover {
+    background-color: #f0f0f0;
+}
