@@ -15,30 +15,36 @@ header {
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
-    display: flex;
-    align-items: center;
 }
 
+/* Navbar container */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo, nav links, and auth buttons */
+}
+
+/* Logo styles */
 .logo {
     font-size: 1.5em;
     font-weight: bold;
     color: #fff;
+    margin-right: 20px;
 }
 
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-
+/* Navigation links container */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
-    margin: 0;
+    flex-grow: 1; /* Allows nav links to expand and fill available space */
+    justify-content: center; /* Center nav links between logo and auth buttons */
     padding: 0;
+    margin: 0;
+}
+
+/* Individual nav link items */
+.nav-links li {
+    margin: 0 20px; /* Space between each link */
 }
 
 .nav-links li a {
@@ -47,13 +53,25 @@ header {
     font-size: 1em;
 }
 
+/* Authentication buttons */
 .auth-buttons {
     display: flex;
-    align-items: center;
-    gap: 15px; /* Ensures spacing */
+    gap: 10px; /* Space between the login and register buttons */
+}
+
+/* Buttons */
+.auth-buttons button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-left: auto; /* Pushes it to the right */
-    padding-left: 20px; /* Creates space from "Settings" */
+    font-size: 1em;
+}
+
+.auth-buttons button:hover {
+    background-color: #777;
 }
 
 
