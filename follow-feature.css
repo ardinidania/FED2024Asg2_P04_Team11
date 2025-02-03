@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/**********************************************************************************/
+/* Header */
+header {
+    background-color: #333;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo, nav links, and auth buttons */
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Navigation */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+    color: white;
+    font-size: 1em;
+}
+
+
+/**********************************************************************************/
+/* Follow Feature Page */
+.follow-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding-left: 30px; /* Shift slightly left */
+}
+
+/* Profile Box */
+.profile-box {
+    background: linear-gradient(to right, #1e3a5a, #2c3e50); /* Darker blue gradient */
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 750px;
+    margin: 20px auto;
+    color: white;
+}
+
+/* Profile Picture */
+.profile-picture {
+    width: 90px;
+    height: 90px;
+    background: #bdc3c7;
+    border-radius: 50%;
+}
+
+/* Profile Name */
+.profile-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Chat Button */
+.chat-button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+}
+
+.chat-button:hover {
+    background: #2980b9;
+}
+
+/* Follow Button */
+.follow-button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+}
+
+.follow-button:hover {
+    background: #219150;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    padding-left: 30px;
+}
+
+.tab-link {
+    padding: 12px 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tab-link.active {
+    border-bottom: 3px solid black;
+    color: #2980b9;
+}
+
+/* Products */
+.product-list {
+    display: flex;
+    gap: 20px;
+    justify-content: left;
+    margin-top: 10px;
+}
+
+.product-item {
+    width: 180px;
+    height: 180px;
+    background: lightgray;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/**************************************************************************/
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 0; /* Remove extra spacing */
+}
