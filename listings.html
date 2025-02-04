@@ -20,18 +20,16 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="nav-container">
             <div class="logo">MokeSell</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Listings</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="about-you.html">About You</a></li>
-                <li><a href="notification.html">Notifications</a></li>
             </ul>
             <div class="auth-buttons">
-                <button id="login-btn">Login</button>
-                <button id="register-btn">Register</button>
+                <span id="auth-toggle">Login / Register</span>
             </div>
         </nav>
     </header>
@@ -43,11 +41,13 @@
             <div class="list-products-container">
                 <h2 class="section-title">List your products</h2>
                 <section class="list-products">
-                    <div class="upload-box">
-                        <div class="upload-icon">
-                            <img src="upload-icon.png" alt="Upload Icon">
+                    <div class="upload-box" id="uploadBox">
+                        <input type="file" id="imageUpload" multiple accept="image/*" hidden>
+                        <div class="upload-icon" id="uploadIcon">
+                            <img src="Images/add-image-icon.png" alt="Upload Icon">
                         </div>
-                        <button>Select photos</button>
+
+                        <button class="upload-btn" id="selectPhotosBtn">Select photos</button>
                         <p>or drag photos here <br> (up to 30 photos)</p>
                     </div>
                 </section>
@@ -60,20 +60,22 @@
                     <section class="product-category">
                         <h3>Apple Products</h3>
                         <div class="product-grid">
-                            <div class="product-box"><img src="Images/ipad 2.jpeg" alt="Apple Product - ipad"></div>
-                            <div class="product-box"><img src="placeholder.png" alt="Apple Product"></div>
-                            <div class="product-box"><img src="placeholder.png" alt="Apple Product"></div>
-                            <div class="product-box"><img src="placeholder.png" alt="Apple Product"></div>
+                            <div class="product-slider">
+                            <div class="product-box"><img class="ipad-product" src="Images/ipad-2.jpeg" alt="Apple Product - ipad"></div>
+                            <div class="product-box"><img class="iphone-product" src="Images/iphone.png" alt="Apple Product"></div>
+                            <div class="product-box"><img class="apple-placeholder1" src="Images/apple_airpods-max_hero_12082020_big.jpg.large.jpg" alt="Apple Product"></div>
+                            <div class="product-box"><img class="apple-placeholder2" src="Images/macbook.jpeg" alt="Apple Product"></div>
                         </div>
                     </section>
 
                     <section class="product-category">
                         <h3>Samsung Products</h3>
                         <div class="product-grid">
-                            <div class="product-box"><img src="placeholder.png" alt="Samsung Product"></div>
-                            <div class="product-box"><img src="placeholder.png" alt="Samsung Product"></div>
-                            <div class="product-box"><img src="placeholder.png" alt="Samsung Product"></div>
-                            <div class="product-box"><img src="placeholder.png" alt="Samsung Product"></div>
+                             <div class="product-slider">
+                            <div class="product-box"><img class="samsung-product1" src="Images/GalaxyTab-1.jpg" alt="Samsung Galaxy Tab"></div>
+                            <div class="product-box"><img class="samsung-product2" src="Images/Samsungphone-1.jpg" alt="Samsung Galaxy Phone"></div>
+                            <div class="product-box"><img class="samsung-product3" src="Images/Galaxybud-1.jpg" alt="Samsung Galaxy Bud"></div>
+                            <div class="product-box"><img class="samsung-product4" src="Images/Galaxylaptop-1.jpg" alt="Samsung Galaxy Laptop"></div>
                         </div>
                     </section>
                 </section>

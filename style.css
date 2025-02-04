@@ -7,37 +7,41 @@ body {
     color: #333;
 }
 
-/**********************************************************************************/
-/* Header */
+/* ============================================================= */
+/* Navbar */
 header {
     background-color: #333;
+    color: white;
     padding: 15px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space between logo, nav links, and auth buttons */
+    justify-content: space-between; /* Ensures proper spacing */
 }
 
-/* Logo */
+/* Logo Styling */
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: #fff;
+    color: white;
+    margin-right: 20px; /* Adds spacing between the logo and "Home" */
 }
 
-/* Navigation */
+/* Navigation Container */
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    flex-grow: 1; /* Allows nav links to take available space */
 }
 
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
+    padding-left: 20px; /* Adjusts spacing from the logo */
 }
 
+/* Navbar Links */
 .nav-links li a {
     color: white;
     text-decoration: none;
@@ -45,134 +49,113 @@ header {
     font-weight: bold;
 }
 
-/* Auth Buttons */
+/* Login/Register Positioning */
 .auth-buttons {
     display: flex;
     gap: 15px;
     cursor: pointer;
     color: white;
     font-size: 1em;
+    margin-left: auto; /* Pushes Login/Register to the far right */
 }
-
-
-/**********************************************************************************/
-/* Follow Feature Page */
-.follow-container {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding-left: 30px; /* Shift slightly left */
-}
-
-/* Profile Box */
-.profile-box {
-    background: linear-gradient(to right, #1e3a5a, #2c3e50); /* Darker blue gradient */
-    padding: 25px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 750px;
-    margin: 20px auto;
-    color: white;
-}
-
-/* Profile Picture */
-.profile-picture {
-    width: 90px;
-    height: 90px;
-    background: #bdc3c7;
-    border-radius: 50%;
-}
-
-/* Profile Name */
-.profile-name {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Chat Button */
-.chat-button {
-    background: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 5px;
-}
-
-.chat-button:hover {
-    background: #2980b9;
-}
-
-/* Follow Button */
-.follow-button {
-    background: #27ae60;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 5px;
-}
-
-.follow-button:hover {
-    background: #219150;
-}
-
-/* Tabs */
-.tabs {
-    display: flex;
-    justify-content: left;
-    margin-top: 20px;
-    padding-left: 30px;
-}
-
-.tab-link {
-    padding: 12px 25px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.tab-link.active {
-    border-bottom: 3px solid black;
-    color: #2980b9;
-}
-
-/* Products */
-.product-list {
-    display: flex;
-    gap: 20px;
-    justify-content: left;
-    margin-top: 10px;
-}
-
-.product-item {
-    width: 180px;
-    height: 180px;
-    background: lightgray;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.product-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 
 /*==========================================================================*/
 /* Listings Section */
 /* Only apply styles within .product-listing-page */
-/* Adjust container to shift everything down */
+/* Adjust container */
 .product-listing-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #f8f8f8;
-    padding-top: 50px; /* Shifts everything downward */
-    padding-bottom: 50px; /* Adds gap at the bottom */
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Upload Box */
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 280px;
+    height: 220px;
+    text-align: center;
+}
+
+/* Upload Icon */
+.upload-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px; /* Reduced space */
+    cursor: pointer;
+}
+
+/* Upload Button */
+.upload-btn {
+    background-color: #0d268ae3;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out;
+    margin-top: 0.5px; /* Adjusted spacing */
+}
+
+.upload-btn:hover {
+    background-color: #0f2ca3b3;
+}
+
+/* Drag Over Effect */
+.upload-box.drag-over {
+    background: #e8f0fe;
+    border: 2px solid #007bff;
+}
+
+/* Image Preview */
+.image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    max-width: 280px;
+}
+
+.image-preview-container img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Drag Over Effect */
+.upload-box.drag-over {
+    background: #e8f0fe;
+    border: 2px solid #007bff;
+}
+
+/* Button Styling */
+button {
+    background-color: #020b15cf;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 /* Container for sections */
@@ -198,8 +181,9 @@ header {
     align-items: center;
     height: 600px;
     max-width: 400px;
+    border: 2px solid #ccc; /* Adds a border around the entire section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
 }
-
 /* Upload Box */
 .product-listing-page .upload-box {
     display: flex;
@@ -228,6 +212,8 @@ header {
     align-items: center;
     height: 600px; /* Adjusted to better match reference */
     max-width: 700px;
+    border: 2px solid #ccc; /* Adds a border around the entire section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
 }
 
 /* Header Styling */
@@ -268,7 +254,7 @@ header {
 .product-listing-page .product-box {
     background: rgba(255, 255, 255, 0.92);
     border-radius: 5px;
-    height: 190px; /* Adjusted size to match reference */
+    height: 185px; /* Adjusted size to match reference */
     width: 150px; /* Adjusted width */
     display: flex;
     justify-content: center;
@@ -276,6 +262,7 @@ header {
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Prevents overflow */
+    border-radius: 10px;
 }
 
 /* Ensure Images Fit Properly */
@@ -287,10 +274,60 @@ header {
     margin-top: -10px; /* Moves image up */
 }
 
+/* Individual Styling for Specific Product Images */
+
+/* Apple Products */
+.product-box img.ipad-product {
+    width: 165px ;
+    height: 180px ;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.product-box img.iphone-product {
+    width: 130px ;
+    height: 170px ;
+    border-radius: 15px;
+}
+
+.product-box img.apple-placeholder1 {
+    width: 120px ;
+    height: 160px ;
+}
+
+.product-box img.apple-placeholder2 {
+    width: 155px ;
+    height: 195px ;
+    border-radius: 50%;
+}
+
+/* Samsung Products */
+.product-box img.samsung-product1 {
+    width: 140px ;
+    height: 165px;
+}
+
+.product-box img.samsung-product2 {
+    width: 155px;
+    height: 180px ;
+    border-radius: 15px;
+}
+
+.product-box img.samsung-product3 {
+    width: 110px;
+    height: 150px;
+}
+
+.product-box img.samsung-product4 {
+    width: 150px ;
+    height: 180px;
+    border-radius: 45%;
+}
+
 
 /* Move Samsung Product row slightly */
 .product-listing-page .product-category:nth-child(2) {
-    margin-top: 20px; /* Moves Samsung Product row down */
+    margin-top: 30px; /* Moves Samsung Product row down */
 }
 
 /* Footer Gap */
@@ -301,6 +338,66 @@ footer {
     color: white;
     margin-top: 80px; /* Increased gap between content and footer */
 }
+
+/* Ensure headers remain in place */
+.product-category {
+    position: relative;
+    overflow: hidden; /* Prevents overflow issues */
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+/* Keep text headers in place */
+.product-category h3 {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    z-index: 10; /* Ensure text is above the moving images */
+}
+
+.product-grid {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; /* Prevents images from affecting text */
+    padding: 10px 0;
+}
+
+
+/* Wrapper for moving products only */
+.product-slider {
+    display: flex;
+    gap: 20px;
+    animation: slideProducts 5s linear infinite; /* Apply animation here */
+}
+
+/* Animation for moving product boxes left to right */
+@keyframes slideProducts {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Style adjustments for product-box */
+.product-box {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    width: 150px;
+    height: 180px;
+}
+
+
+
 
 
 /*==========================================================================*/
@@ -547,66 +644,17 @@ footer {
     border-radius: 8px; /* Ensures rounded corners */
 }
 
+.upload-box img {
+    width: 50px;  /* Adjust the width */
+    height: 50px; /* Adjust the height */
+    object-fit: contain; /* Ensures image fits properly */
+}
+
+
 /*==========================================================================*/
 
 
-/*==========================================================================*/
-/* Chat Section */
-.chat-feature {
-    padding: 40px;
-    background-color: #ede7f6;
-}
 
-.chat-window {
-    width: 60%;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.chat-header {
-    padding: 10px;
-    background-color: #673ab7;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-}
-
-.chat-body {
-    padding: 10px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.message {
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 4px;
-}
-
-.message.seller {
-    background-color: #e3f2fd;
-    align-self: flex-start;
-}
-
-.message.buyer {
-    background-color: #c8e6c9;
-    align-self: flex-end;
-}
-
-.chat-input {
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-}
-
-.chat-input input {
-    flex: 1;
-}
 
 /**************************************************************************/
 footer {
