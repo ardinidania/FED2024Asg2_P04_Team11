@@ -66,4 +66,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// bell icon
+document.addEventListener("DOMContentLoaded", function () {
+    const notificationBell = document.getElementById("notification-icon");
+    const notificationDot = document.querySelector(".notification-dot");
+
+    // Mock function to simulate new notifications
+    function checkForNewNotifications() {
+        let hasNewNotifications = Math.random() < 0.5; // Simulate 50% chance of having new notifications
+
+        if (hasNewNotifications) {
+            notificationBell.classList.add("has-notifications");
+        } else {
+            notificationBell.classList.remove("has-notifications");
+        }
+    }
+
+    // Simulate checking for notifications every 5 seconds
+    setInterval(checkForNewNotifications, 5000);
+
+    // When the bell is clicked, open notifications page
+    notificationBell.addEventListener("click", function () {
+        window.location.href = "notifications.html";
+    });
+});
+
 
