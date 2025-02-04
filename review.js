@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const mockReviews = [
         {
             name: "Chris",
-            rating: 4.3,
+            rating: 5,
             text: "Great customer service!",
             date: "2025-01-28"
         },
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: "John",
-            rating: 3.7,
-            text: "Good quality but shipping was slow.",
+            rating: 5,
+            text: "Good quality products. Will recommend to my friends.",
             date: "2025-01-27"
         }
     ];
