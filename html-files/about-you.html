@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
-    <link rel="stylesheet" href="about-you.css">
-    <script src="about-you.js"></script>
+    <link rel="stylesheet" href="../css-files/about-you.css">
+    <script src="../js-files/about-you.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
@@ -20,6 +20,7 @@
         s0.parentNode.insertBefore(s1,s0);
         })();
     </script>
+
 </head>
 <body>
     <header>
@@ -28,16 +29,16 @@
             
             <!-- Move nav links closer to the left -->
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="listings.html">Listings</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about-you.html">About You</a></li>
+                <li><a href="../html-files/index.html">Home</a></li>
+                <li><a href="../html-files/listings.html">Listings</a></li>
+                <li><a href="../html-files/shop.html">Shop</a></li>
+                <li><a href="../html-files/about-you.html">About You</a></li>
             </ul>
     
             <!-- Push these to the right -->
             <div class="nav-right">
-                <a href="notification.html" class="notification-bell">
-                    <img src="Images/notification.png" alt="Notifications">
+                <a href="../html-files/notification.html" class="notification-bell">
+                    <img src="../Images/notification.png" alt="Notifications">
                     <span class="notification-dot"></span>
                 </a>
             </div>
@@ -57,7 +58,7 @@
         <!-- Profile Picture Upload -->
         <div class="profile-picture-section">
             <div class="profile-picture">
-                <img id="profile-pic" src="Images/default-avatar.png" alt="Profile Picture">
+                <img id="profile-pic" src="../Images/default-avatar.png" alt="Profile Picture">
             </div>
             <button class="upload-button" id="upload-btn">Upload a picture</button>
             <input type="file" id="file-input" accept="image/*" hidden>

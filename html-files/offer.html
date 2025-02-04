@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
-    <link rel="stylesheet" href="chat.css">
-    <script src="script.js"></script>
+
+    <!-- ✅ Corrected CSS Path -->
+    <link rel="stylesheet" href="../css-files/offer.css">
+
+    <!-- ✅ Corrected JavaScript Path -->
+    <script src="../js-files/offer.js"></script>
+
     <style>
-        .chat-box, .feedback-box {
+        .chat-box, .feedback-box, .offer-box {
             display: none;
         }
     </style>
 </head>
 <body>
 
-    <h1>Chat Page</h1>
+    <h1>Offer Page</h1>
     
     <!-- Initial Message Box -->
     <div class="initial-box">
@@ -29,7 +34,7 @@
         <textarea id="userChatMessage" placeholder="Type your message..."></textarea><br>
         <button id="sendChatMessage">Send</button>
     </div>
-    
+
     <!-- Feedback Box -->
     <div class="feedback-box">
         <h2>Rate Your Experience</h2>
@@ -60,15 +65,14 @@
         let agentResponseIndex = 0;
 
         const agentResponses = [
-            `Hi, thanks for reaching out, these are the prices of our iPhone 16 Pro Max (for all colours):<br>
-             256GB -> $1899.00<br>
-             512GB -> $2199.00<br>
-             1TB -> $2499.00`,
-            'Absolutely, here is the link to pay securely: <a href="https://mokesell/payment.com">https://mokesell/payment.com</a>',
-            'Great, since you’ve selected pickup from store today, you can drop by our store at the timing you’ve selected. Thank you!  <a href="offer.html" class="offer-link">Click here to make another offer</a>`'
+            "Thanks for reaching out, yes you can offer a price and I will see if it can be approved.",
+            "I have submitted your offer, let me check with the system to see if it is approved. One moment please!",
+            "Great news, your offered price has been approved, you can now proceed to make payment.",
+            "Absolutely, here is the link to pay securely: <a href='https://mokesell/payment.com' target='_blank'>https://mokesell/payment.com</a>",
+            "Great, you can pick it up today at the store at the timing you've selected. Thank you!"
         ];
 
-        // Simulate sending an initial message
+        // Show chat box on initial message send
         sendMessageBtn.addEventListener('click', () => {
             const message = initialMessage.value.trim();
             if (message) {
@@ -90,14 +94,15 @@
                 return;
             }
 
+            // Append user's message
             messages.push({ sender: 'user', text: messageText });
             displayMessages();
             userChatMessage.value = '';
 
-            // Send agent response only if there are more responses to send
+            // Show seller's response after a delay
             if (agentResponseIndex < agentResponses.length) {
                 setTimeout(() => {
-                    messages.push({ sender: 'agent', text: agentResponses[agentResponseIndex] });
+                    messages.push({ sender: 'seller', text: agentResponses[agentResponseIndex] });
                     agentResponseIndex++;
                     displayMessages();
                     if (agentResponseIndex === agentResponses.length) {
@@ -123,15 +128,15 @@
         // Function to display messages
         function displayMessages() {
             messageContainer.innerHTML = messages.map(msg => 
-                `<div class="message ${msg.sender === 'user' ? 'user-message' : 'agent-message'}">
+                `<div class="message ${msg.sender === 'user' ? 'user-message' : 'seller-message'}">
                     ${msg.text}
                 </div>`
             ).join('');
             messageContainer.scrollTop = messageContainer.scrollHeight;
         }
 
-        // Handle feedback submission
-        submitFeedbackBtn.addEventListener('click', () => {
+         // Handle feedback submission
+         submitFeedbackBtn.addEventListener('click', () => {
             const rating = parseInt(ratingInput.value);
             const feedback = feedbackInput.value.trim();
 
@@ -152,10 +157,7 @@
         setTimeout(() => {
             feedbackBox.style.display = 'block';
         }, 20000); // Simulate chat duration
+
     </script>
-    
-<footer>
-    <p>&copy; 2025 MokeSell. All rights reserved.</p>
-</footer>
 </body>
 </html>
