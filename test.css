@@ -1,11 +1,16 @@
 /* ============================================================= */
 /* Reset Styles */
-body, html {
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
     color: #333;
+    line-height: 1.6;
 }
 
 /* ============================================================= */
@@ -16,33 +21,20 @@ header {
     padding: 15px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures proper spacing */
+    justify-content: space-between;
 }
 
-/* Logo Styling */
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: white;
-    margin-right: 20px; /* Adds spacing between the logo and "Home" */
 }
 
-/* Navigation Container */
-.nav-container {
-    display: flex;
-    align-items: center;
-    flex-grow: 1; /* Allows nav links to take available space */
-}
-
-/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
-    padding-left: 20px; /* Adjusts spacing from the logo */
 }
 
-/* Navbar Links */
 .nav-links li a {
     color: white;
     text-decoration: none;
@@ -50,35 +42,26 @@ header {
     font-weight: bold;
 }
 
-/* Login/Register Positioning */
-.auth-buttons {
-    display: flex;
-    gap: 15px;
-    cursor: pointer;
-    color: white;
-    font-size: 1em;
-    margin-left: auto; /* Pushes Login/Register to the far right */
-}
-
-
 /* ============================================================= */
-/* Follow Feature */
+/* Follow Feature Container */
 .follow-container {
     max-width: 1000px;
     margin: 50px auto;
-    padding-left: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Profile Box */
+/* ============================================================= */
+/* Profile Section */
 .profile-box {
     background: linear-gradient(to right, #1e3a5a, #2c3e50);
     padding: 25px;
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 750px;
-    margin: 20px auto;
     color: white;
 }
 
@@ -94,13 +77,15 @@ header {
     font-weight: bold;
 }
 
-/* Buttons */
-.chat-button, .follow-button {
+/* ============================================================= */
+/* Button Styles */
+button {
     padding: 10px 18px;
-    border-radius: 5px;
     border: none;
-    cursor: pointer;
+    border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .chat-button {
@@ -125,31 +110,31 @@ header {
 /* Tabs */
 .tabs {
     display: flex;
-    justify-content: left;
+    gap: 15px;
     margin-top: 20px;
-    padding-left: 30px;
+    padding: 0 10px;
+    border-bottom: 2px solid #e5e5e5;
 }
 
 .tab-link {
-    padding: 12px 25px;
-    border: none;
-    background: none;
-    cursor: pointer;
+    padding: 12px 20px;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s ease;
 }
 
 .tab-link.active {
-    border-bottom: 3px solid black;
     color: #2980b9;
+    border-bottom: 3px solid #2980b9;
 }
 
-/* Hide all tab content by default */
 .tab-content {
     display: none;
+    margin-top: 20px;
 }
 
-/* Show only the active tab */
 .tab-content.active {
     display: block;
 }
@@ -159,7 +144,6 @@ header {
 .product-list {
     display: flex;
     gap: 20px;
-    justify-content: left;
     margin-top: 10px;
 }
 
@@ -167,19 +151,32 @@ header {
     width: 180px;
     height: 180px;
     background: lightgray;
-    border-radius: 5px;
-    overflow: hidden;
+    border-radius: 8px;
 }
 
 /* ============================================================= */
 /* Reviews Section */
-.average-rating {
+.average-rating, .reviews-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin: 12px 0;
+    align-items: center;
+    padding: 10px 0;
     border-bottom: 2px solid #e5e5e5;
-    padding-bottom: 12px;
+}
+
+.add-review {
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.add-review:hover {
+    background-color: #1d4ed8;
 }
 
 .rating-display {
@@ -197,49 +194,45 @@ header {
 .stars {
     position: relative;
     font-size: 24px;
-    line-height: 1;
-    color: #e5e5e5;
-    display: inline-block;
-    width: 120px; /* Adjust based on desired star width */
+    color: #e5e5e5; /* Gray color for empty stars */
+    width: 120px;
+    height: 24px;
+    overflow: hidden;
 }
 
-/* Ensures the filled stars overlay the gray stars correctly */
+.stars .star-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #e5e5e5; /* Gray color */
+    z-index: 1;
+}
+
 .stars .filled-stars {
     position: absolute;
     top: 0;
     left: 0;
-    color: #f59e0b;
-    width: 90%; /* Adjust this to match your rating (90% for 4.5 stars) */
+    height: 100%;
+    color: #f59e0b; /* Gold color */
     overflow: hidden;
     white-space: nowrap;
+    z-index: 2;
 }
 
-/* Optional: smooth transition when the stars update */
-.stars .filled-stars {
-    transition: width 0.3s ease-in-out;
-}
 
-/* Responsive reviews grid */
+
+
+/* ============================================================= */
+/* Review Grid */
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    gap: 32px;
+    padding: 20px;
 }
 
-/* Optional media query for better small screen handling */
-@media (max-width: 600px) {
-    .average-rating {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .rating-display {
-        margin-top: 8px;
-    }
-}
-
-
-/* Review Cards */
 .review-card {
     background-color: #f9f9f9;
     border-radius: 12px;
@@ -248,6 +241,12 @@ header {
     gap: 16px;
     align-items: flex-start;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .review-initial {
@@ -263,10 +262,22 @@ header {
     border-radius: 50%;
 }
 
+.review-content {
+    flex: 1;
+}
+
 .review-content h3 {
     margin: 0;
     font-size: 18px;
     font-weight: bold;
+    color: #1e293b;
+}
+
+.review-content p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #4b5563;
+    line-height: 1.4;
 }
 
 .review-date {
@@ -274,8 +285,61 @@ header {
     color: #9ca3af;
 }
 
-.hidden {
-    display: none;
+/* ============================================================= */
+/* Review Form */
+.add-review-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-review-form input,
+.add-review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.add-review-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.submit-review {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-review:hover {
+    background-color: #1d4ed8;
+}
+
+/* ============================================================= */
+/* Load More Button */
+.load-more {
+    background-color: #e5e5e5;
+    color: #1e293b;
+    font-weight: bold;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.load-more:hover {
+    background-color: #d1d5db;
 }
 
 /* ============================================================= */
@@ -286,6 +350,3 @@ footer {
     background-color: #333;
     color: white;
 }
-
-
-

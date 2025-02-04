@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Follow Feature</title>
     <link rel="stylesheet" href="follow-feature.css">
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
     <header>
@@ -49,24 +50,24 @@
             </div>
         </div>
 
-        <!-- ✅ Reviews Section (Now Fully Integrated) -->
+        <!-- Reviews Section -->
         <div id="reviews" class="tab-content">
             <h2>Ratings and Reviews</h2>
 
             <div class="average-rating">
                 <span>Average rating:</span>
                 <div class="rating-display">
-                    <span class="rating-value">4.5</span>
+                    <span class="rating-value">5.0</span>
                     <div class="stars">
                         <span class="star-overlay">★★★★★</span>
-                        <span class="filled-stars" style="width: 90%;">★★★★★</span>
+                        <span class="filled-stars">★★★★★</span>
                     </div>
                 </div>
             </div>
+            
 
             <div class="reviews-header">
                 <h2>All reviews (1k)</h2>
-                <button class="add-review">+ Add review</button>
             </div>
 
             <!-- Add Review Form -->
@@ -76,7 +77,7 @@
                     <input type="text" id="reviewerName" placeholder="Your Name" required>
                     <div class="star-rating">
                         <label for="ratingInput">Rate (1-5):</label>
-                        <input type="number" id="ratingInput" min="1" max="5" step="0.1" placeholder="1 to 5" required>
+                        <input type="number" id="ratingInput" min="1" max="5" step="0.1" required>
                     </div>
                     <textarea id="reviewText" placeholder="Write your review here..." required></textarea>
                     <button type="submit" class="submit-review">Submit Review</button>
@@ -84,24 +85,26 @@
             </div>
 
             <div class="reviews-grid">
-                <!-- Example review cards -->
                 <div class="review-card">
                     <div class="review-initial">A</div>
                     <div class="review-content">
                         <h3>Alex</h3>
                         <div class="stars">
                             <span class="star-overlay">★★★★★</span>
-                            <span class="filled-stars" style="width: 100%;">★★★★★</span>
+                            <span class="filled-stars" style="width: 90%;">★★★★★</span>
                         </div>
-                        <p>Mokesell has authentic products and it's not fake</p>
+                        
+                        
+                        
+                        <p>MokeSell has authentic products and it's not fake</p>
                         <span class="review-date">2025-02-02</span>
                     </div>
                 </div>
             </div>
 
-            <button class="load-more" id="loadMoreButton">See more reviews</button>
-        </div>
+            <button class="load-more" onclick="window.location.href='review.html'">See more reviews</button>
 
+        </div>
     </main>
 
     <footer>
@@ -109,5 +112,6 @@
     </footer>
 
     <script src="follow-feature.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>
