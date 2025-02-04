@@ -1,25 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Follow Feature</title>
     <link rel="stylesheet" href="follow-feature.css">
-    <script src="follow-feature.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/67933421825083258e0a6ece/1iibg790o';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-        })();
-    </script>
 </head>
 <body>
     <header>
@@ -31,9 +16,6 @@
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="about-you.html">About You</a></li>
             </ul>
-            <div class="auth-buttons">
-                <span id="auth-toggle">Login / Register</span>
-            </div>
         </nav>
     </header>
 
@@ -45,33 +27,80 @@
             <div class="profile-picture"></div>
             <div class="profile-details">
                 <span class="profile-name">John Goh</span>
-                <button id="chat-btn" class="chat-button" onclick="window.location.href='chat.html';">Chat with Seller</button>
-
+                <button id="chat-btn" class="chat-button">Chat with Seller</button>
             </div>
             <button id="follow-btn" class="follow-button">Follow</button>
         </div>
 
         <!-- Tabs -->
-<div class="tabs">
-    <button class="tab-link active" data-tab="products">Products</button>
-    <button class="tab-link" data-tab="reviews">Reviews</button>
-</div>
+        <div class="tabs">
+            <button class="tab-link active" data-tab="products">Products</button>
+            <button class="tab-link" data-tab="reviews">Reviews</button>
+        </div>
 
-<!-- Tab Content Sections -->
-<div id="products" class="tab-content active">
-    <h2>Products</h2>
-    <div class="product-list">
-        <div class="product-item"></div>
-        <div class="product-item"></div>
-        <div class="product-item"></div>
-        <div class="product-item"></div>
-    </div>
-</div>
+        <!-- Products Section -->
+        <div id="products" class="tab-content active">
+            <h2>Products</h2>
+            <div class="product-list">
+                <div class="product-item"></div>
+                <div class="product-item"></div>
+                <div class="product-item"></div>
+                <div class="product-item"></div>
+            </div>
+        </div>
 
-<div id="reviews" class="tab-content">
-    <h2>Reviews</h2>
-    <p>No reviews yet.</p>
-</div>
+        <!-- ✅ Reviews Section (Now Fully Integrated) -->
+        <div id="reviews" class="tab-content">
+            <h2>Ratings and Reviews</h2>
+
+            <div class="average-rating">
+                <span>Average rating:</span>
+                <div class="rating-display">
+                    <span class="rating-value">4.5</span>
+                    <div class="stars">
+                        <span class="star-overlay">★★★★★</span>
+                        <span class="filled-stars" style="width: 90%;">★★★★★</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-header">
+                <h2>All reviews (1k)</h2>
+                <button class="add-review">+ Add review</button>
+            </div>
+
+            <!-- Add Review Form -->
+            <div class="add-review-form hidden">
+                <h3>Write a Review</h3>
+                <form id="reviewForm">
+                    <input type="text" id="reviewerName" placeholder="Your Name" required>
+                    <div class="star-rating">
+                        <label for="ratingInput">Rate (1-5):</label>
+                        <input type="number" id="ratingInput" min="1" max="5" step="0.1" placeholder="1 to 5" required>
+                    </div>
+                    <textarea id="reviewText" placeholder="Write your review here..." required></textarea>
+                    <button type="submit" class="submit-review">Submit Review</button>
+                </form>
+            </div>
+
+            <div class="reviews-grid">
+                <!-- Example review cards -->
+                <div class="review-card">
+                    <div class="review-initial">A</div>
+                    <div class="review-content">
+                        <h3>Alex</h3>
+                        <div class="stars">
+                            <span class="star-overlay">★★★★★</span>
+                            <span class="filled-stars" style="width: 100%;">★★★★★</span>
+                        </div>
+                        <p>Mokesell has authentic products and it's not fake</p>
+                        <span class="review-date">2025-02-02</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="load-more" id="loadMoreButton">See more reviews</button>
+        </div>
 
     </main>
 
@@ -79,5 +108,6 @@
         <p>&copy; 2025 MokeSell. All rights reserved.</p>
     </footer>
 
+    <script src="follow-feature.js"></script>
 </body>
 </html>

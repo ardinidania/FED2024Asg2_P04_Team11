@@ -7,34 +7,40 @@ body {
 }
 
 /* ============================================================= */
-/* Header */
+/* Navbar */
 header {
     background-color: #333;
     color: white;
     padding: 15px 20px;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Ensures proper spacing */
 }
 
+/* Logo Styling */
 .logo {
     font-size: 1.8em;
     font-weight: bold;
     color: white;
+    margin-right: 20px; /* Adds spacing between the logo and "Home" */
 }
 
+/* Navigation Container */
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    flex-grow: 1; /* Allows nav links to take available space */
 }
 
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
+    padding-left: 20px; /* Adjusts spacing from the logo */
 }
 
+/* Navbar Links */
 .nav-links li a {
     color: white;
     text-decoration: none;
@@ -42,13 +48,16 @@ header {
     font-weight: bold;
 }
 
+/* Login/Register Positioning */
 .auth-buttons {
     display: flex;
     gap: 15px;
     cursor: pointer;
     color: white;
     font-size: 1em;
+    margin-left: auto; /* Pushes Login/Register to the far right */
 }
+
 
 /* ============================================================= */
 /* Hero Section */
@@ -56,8 +65,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px;
-    height: 100vh;
+    padding: 40px; /* Reduced padding */
+    height: 80vh; /* Reduced height */
     background: linear-gradient(to right, #dce6f0, #b0b8c1);
 }
 
@@ -67,9 +76,8 @@ header {
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 3.5rem;
+    margin-bottom: 25px; /* Increased spacing below heading */
 }
 
 .shop-now {
@@ -82,11 +90,13 @@ header {
     border-radius: 5px;
     text-decoration: none;
     transition: background 0.3s ease-in-out;
+    margin-top: 20px; /* Added space above the button */
 }
 
 .shop-now:hover {
     background: linear-gradient(to right, #666, #333);
 }
+
 
 .hero-image {
     flex: 1;
@@ -96,8 +106,8 @@ header {
 }
 
 .hero-image img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 80%; /* Reduced size slightly */
+    max-height: 80%;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
@@ -221,12 +231,27 @@ header {
     }
 }
 
+.loading-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
 
 /**************************************************************************/
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 8px; /* Reduced padding */
     background-color: #333;
     color: white;
-    margin-top: 0; /* Remove extra spacing */
+    margin-top: 0; /* Ensure no extra margin */
 }

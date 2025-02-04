@@ -1,5 +1,5 @@
 //========================================================================
-// Login / Register
+// Login / Register Handling
 document.addEventListener("DOMContentLoaded", function () {
     const authToggle = document.getElementById("auth-toggle");
     const accountSection = document.getElementById("account-section");
@@ -15,12 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const loadingOverlay = document.getElementById("loading-animation");
 
-    // Ensure Lottie animation is hidden on load
+    // ✅ Ensure Lottie animation is hidden on page load
     if (loadingOverlay) {
         loadingOverlay.classList.add("hidden");
+        loadingOverlay.style.display = "none";
     }
 
-    // Show Login/Register popup
+    // ✅ Show Login/Register Popup
     if (authToggle) {
         authToggle.addEventListener("click", function () {
             accountSection.classList.toggle("hidden");
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Function to validate fields
+    // ✅ Function to validate fields
     function validateForm(email, password, errorContainer) {
         let errors = [];
 
@@ -69,22 +70,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Show Lottie Animation then Redirect
+    // ✅ Show Lottie Animation then Redirect
     function showLoadingAndRedirect() {
         if (!loadingOverlay) {
             console.error("❌ Lottie animation element not found!");
             return;
         }
 
-        loadingOverlay.classList.remove("hidden"); // Show animation
+        console.log("✅ Showing loading animation...");
+
+        // Show only when login/signup is clicked
+        loadingOverlay.classList.remove("hidden");
+        loadingOverlay.style.display = "flex";
 
         setTimeout(() => {
             loadingOverlay.classList.add("hidden");
+            loadingOverlay.style.display = "none";
             window.location.href = "shop.html";
         }, 2000);
     }
 
-    // Handle Login
+    // ✅ Handle Login
     if (loginButton) {
         loginButton.addEventListener("click", function (e) {
             e.preventDefault();
@@ -98,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Handle Sign Up
+    // ✅ Handle Sign Up
     if (createAccountButton) {
         createAccountButton.addEventListener("click", function (e) {
             e.preventDefault();
@@ -112,14 +118,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Clear fields when cancel is clicked
+    // ✅ Clear fields when cancel is clicked
     cancelButtons.forEach(button => {
         button.addEventListener("click", function () {
             document.querySelectorAll("input").forEach(input => input.value = "");
         });
     });
 
-    // Hide Login/Register on non-home pages
+    // ✅ Hide Login/Register on non-home pages
     const authContainer = document.getElementById("auth-container");
     const currentPage = window.location.pathname;
     const hideAuthPages = ["/about-you.html", "/shop.html", "/listings.html", "/help.html"];
@@ -130,3 +136,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+

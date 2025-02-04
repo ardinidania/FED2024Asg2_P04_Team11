@@ -7,37 +7,41 @@ body {
     color: #333;
 }
 
-/**********************************************************************************/
-/* Header */
+/* ============================================================= */
+/* Navbar */
 header {
     background-color: #333;
+    color: white;
     padding: 15px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space between logo, nav links, and auth buttons */
+    justify-content: space-between; /* Ensures proper spacing */
 }
 
-/* Logo */
+/* Logo Styling */
 .logo {
     font-size: 1.8em;
     font-weight: bold;
-    color: #fff;
+    color: white;
+    margin-right: 20px; /* Adds spacing between the logo and "Home" */
 }
 
-/* Navigation */
+/* Navigation Container */
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    flex-grow: 1; /* Allows nav links to take available space */
 }
 
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
+    padding-left: 20px; /* Adjusts spacing from the logo */
 }
 
+/* Navbar Links */
 .nav-links li a {
     color: white;
     text-decoration: none;
@@ -45,14 +49,16 @@ header {
     font-weight: bold;
 }
 
-/* Auth Buttons */
+/* Login/Register Positioning */
 .auth-buttons {
     display: flex;
     gap: 15px;
     cursor: pointer;
     color: white;
     font-size: 1em;
+    margin-left: auto; /* Pushes Login/Register to the far right */
 }
+
 
 /**********************************************************************************/
 /* Settings Page Layout */
