@@ -93,13 +93,13 @@ header {
 .upload-icon img {
     width: 50px;
     height: 50px;
-    margin-bottom: 5px; /* Reduced space */
+    margin-bottom: 5px;
     cursor: pointer;
 }
 
 /* Upload Button */
 .upload-btn {
-    background-color: #0d268ae3;
+    background-color: #090d1cc0;
     color: white;
     border: none;
     padding: 8px 15px;
@@ -107,17 +107,17 @@ header {
     border-radius: 5px;
     font-size: 14px;
     transition: background 0.3s ease-in-out;
-    margin-top: 0.5px; /* Adjusted spacing */
+    margin-top: 0.5px;
 }
 
 .upload-btn:hover {
-    background-color: #0f2ca3b3;
+    background-color: #000000a5;
 }
 
 /* Drag Over Effect */
 .upload-box.drag-over {
     background: #e8f0fe;
-    border: 2px solid #007bff;
+    border: 2px solid #000000;
 }
 
 /* Image Preview */
@@ -137,26 +137,6 @@ header {
     border: 1px solid #ddd;
 }
 
-/* Drag Over Effect */
-.upload-box.drag-over {
-    background: #e8f0fe;
-    border: 2px solid #007bff;
-}
-
-/* Button Styling */
-button {
-    background-color: #020b15cf;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
 
 /* Container for sections */
 .product-listing-page .container {
@@ -166,54 +146,41 @@ button:hover {
     gap: 30px;
     max-width: 1200px;
     width: 100%;
-    margin-top: 50px; /* Moves everything down */
+    margin-top: 50px;
 }
 
 /* Left Section (Upload Box) */
 .product-listing-page .list-products {
     flex: 1;
-    background: #f2f2f2;
+    background: #f4f4f4;
     padding: 30px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers everything inside */
-    align-items: center;
-    height: 600px;
-    max-width: 400px;
-    border: 2px solid #ccc; /* Adds a border around the entire section */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
-}
-/* Upload Box */
-.product-listing-page .upload-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    border: 2px dashed #ccc;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 250px;
-    height: 200px;
-    margin: auto; /* Ensures centering */
+    align-items: center;
+    height: 675px;
+    max-width: 400px;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Right Section (Product Listings) */
 .product-listing-page .sell-section {
     flex: 2;
-    background: #ddd;
+    background: #eceaea ;
     padding: 30px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: flex-start;
     align-items: center;
-    height: 600px; /* Adjusted to better match reference */
-    max-width: 700px;
-    border: 2px solid #ccc; /* Adds a border around the entire section */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    /* Remove any height restriction on the sell-section */
+    height: auto; /* This allows the section to grow with its content */
+    max-width: 655px;
+    max-height: 675px;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Header Styling */
@@ -226,90 +193,98 @@ button:hover {
 
 /* Shift only the category titles to the left */
 .product-listing-page .product-category h3 {
-    text-align: left; /* Align text to the left */
-    margin-left: -40px; /* Move text further left */
-    width: 100%; /* Ensure it spans the full width */
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 10;
+    white-space: nowrap;  /* Prevent text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;  /* Adds ellipsis if the text is too long */
 }
 
 /* Product Categories */
 .product-listing-page .product-category {
-    width: 90%;
-    text-align: left;
-    margin-bottom: 10px; /* Reduced space for better layout */
+    width: 100%;
+    margin-bottom: 20px; /* Added extra margin for spacing */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Centering the Product Grid */
 .product-listing-page .product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 20px; /* Reduced gap for better alignment */
-    width: 85%; /* Reduce width for better centering */
+    display: flex;
+    gap: 20px;
     justify-content: center;
     align-items: center;
     padding-bottom: 10px;
     margin: 10px auto;
+    flex-wrap: wrap;
 }
 
 /* Product Box */
 .product-listing-page .product-box {
     background: rgba(255, 255, 255, 0.92);
     border-radius: 5px;
-    height: 185px; /* Adjusted size to match reference */
-    width: 150px; /* Adjusted width */
+    height: 190px;  /* Increased height to 220px to give more space */
+    width: 240px;   /* Increased width to 170px */
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Prevents overflow */
-    border-radius: 10px;
+    overflow: hidden;  /* Ensures no overflow */
+    padding: 0;  /* Remove padding to avoid shrinking */
+    margin: 0;   /* Remove margin */
 }
 
 /* Ensure Images Fit Properly */
 .product-listing-page .product-box img {
-    width: 160px; /* Makes the image take the full width of the box */
-    height: 180px; /* Makes the image take the full height of the box */
-    object-fit: cover; /* Ensures the image fills the box without stretching */
-    border-radius: 5px; /* Matches the box shape */
-    margin-top: -10px; /* Moves image up */
+    width: 100%;   /* Ensures image fills the box width */
+    height: 100%;  /* Ensures image fills the box height */
+    object-fit: contain;  /* Maintains aspect ratio without distortion */
+    border-radius: 5px;  /* Keeps the border radius of the box */
+    display: block;  /* Ensures the image scales properly */
 }
 
 /* Individual Styling for Specific Product Images */
 
 /* Apple Products */
 .product-box img.ipad-product {
-    width: 165px ;
-    height: 180px ;
+    width: 150px;
+    height: 170px;
     object-fit: contain;
     border-radius: 10px;
 }
 
 .product-box img.iphone-product {
-    width: 130px ;
-    height: 170px ;
+    width: 130px;
+    height: 170px;
     border-radius: 15px;
 }
 
 .product-box img.apple-placeholder1 {
-    width: 120px ;
-    height: 160px ;
+    width: 120px;
+    height: 160px;
 }
 
 .product-box img.apple-placeholder2 {
-    width: 155px ;
-    height: 195px ;
+    width: 155px;
+    height: 195px;
     border-radius: 50%;
 }
 
 /* Samsung Products */
 .product-box img.samsung-product1 {
-    width: 140px ;
+    width: 140px;
     height: 165px;
 }
 
 .product-box img.samsung-product2 {
     width: 155px;
-    height: 180px ;
+    height: 180px;
     border-radius: 15px;
 }
 
@@ -319,15 +294,14 @@ button:hover {
 }
 
 .product-box img.samsung-product4 {
-    width: 150px ;
+    width: 150px;
     height: 180px;
     border-radius: 45%;
 }
 
-
 /* Move Samsung Product row slightly */
 .product-listing-page .product-category:nth-child(2) {
-    margin-top: 30px; /* Moves Samsung Product row down */
+    margin-top: 38px;
 }
 
 /* Footer Gap */
@@ -336,13 +310,13 @@ footer {
     padding: 15px;
     background-color: #333;
     color: white;
-    margin-top: 80px; /* Increased gap between content and footer */
+    margin-top: 80px;
 }
 
 /* Ensure headers remain in place */
 .product-category {
     position: relative;
-    overflow: hidden; /* Prevents overflow issues */
+    overflow: hidden;
     width: 100%;
     padding-bottom: 20px;
 }
@@ -354,23 +328,24 @@ footer {
     font-size: 18px;
     font-weight: bold;
     text-align: left;
-    z-index: 10; /* Ensure text is above the moving images */
+    z-index: 10;
 }
 
+/* Product Grid */
 .product-grid {
     display: flex;
     align-items: center;
     width: 100%;
-    overflow: hidden; /* Prevents images from affecting text */
+    overflow: hidden;
     padding: 10px 0;
 }
-
 
 /* Wrapper for moving products only */
 .product-slider {
     display: flex;
     gap: 20px;
-    animation: slideProducts 5s linear infinite; /* Apply animation here */
+    animation: slideProducts 6s linear infinite;
+    width: 100%;
 }
 
 /* Animation for moving product boxes left to right */
@@ -395,7 +370,6 @@ footer {
     width: 150px;
     height: 180px;
 }
-
 
 
 
