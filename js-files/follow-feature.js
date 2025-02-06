@@ -55,7 +55,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Product section, images moving left and right
+let scrollAmount = 0;
+let scrollSpeed = 1; // Adjust this to control speed
+let scrollDirection = 1; // 1 for right, -1 for left
 
+function autoScroll() {
+    const container = document.querySelector('.product-scroll-container');
+    const productList = container.querySelector('.product-list');
+    const maxScroll = productList.scrollWidth - container.clientWidth;
+
+    // Update scroll position
+    scrollAmount += scrollSpeed * scrollDirection;
+
+    // Reverse direction when hitting the start or end
+    if (scrollAmount >= maxScroll || scrollAmount <= 0) {
+        scrollDirection *= -1;
+    }
+
+    container.scrollLeft = scrollAmount;
+
+    // Continue scrolling
+    requestAnimationFrame(autoScroll);
+}
+
+// Start scrolling
+document.addEventListener('DOMContentLoaded', () => {
+    autoScroll();
+});
 
 
 

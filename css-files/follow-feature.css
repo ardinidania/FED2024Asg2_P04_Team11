@@ -122,9 +122,6 @@ header {
 }
 
 
-/* Apple Products */
-
-
 
 /* ============================================================= */
 /* Tabs */
@@ -160,21 +157,68 @@ header {
 }
 
 /* ============================================================= */
-/* Products Section */
+/* Scroll wrapper to contain everything */
+.product-scroll-wrapper {
+    width: 100%;
+    max-width: 1000px;         /* Set a max width */
+    margin: auto;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Scroll container: Prevent overflow */
+.product-scroll-container {
+    overflow: hidden;          /* Prevent anything from showing outside */
+    width: 100%;
+    position: relative;
+}
+
+/* The product list is animated */
 .product-list {
     display: flex;
     gap: 20px;
-    justify-content: left;
-    margin-top: 10px;
+    animation: auto-scroll 8s linear infinite;  
+    position: relative;
 }
 
+
+
+/* Products */
 .product-item {
-    width: 180px;
-    height: 180px;
-    background: lightgray;
+    width: 160px;
+    height: 160px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.product-item img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+/* Keyframes for scrolling left to right and back */
+@keyframes auto-scroll {
+    0% {
+        transform: translateX(-100%); /* Start fully off-screen on the left */
+    }
+    50% {
+        transform: translateX(0);     /* Centered (visible in the container) */
+    }
+    100% {
+        transform: translateX(100%);  /* Off-screen on the right */
+    }
+}
+
 
 /* ============================================================= */
 /* Reviews Section */
