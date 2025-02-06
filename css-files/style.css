@@ -253,20 +253,22 @@ header {
 
 /* Apple Products */
 .product-box img.ipad-product {
-    width: 150px;
-    height: 170px;
+    width: 140px;
+    height: 200px;
     object-fit: contain;
     border-radius: 10px;
+    margin-top: -15px;
 }
 
 .product-box img.iphone-product {
     width: 130px;
     height: 170px;
     border-radius: 15px;
+    
 }
 
 .product-box img.apple-placeholder1 {
-    width: 120px;
+    width: 140px;
     height: 160px;
 }
 
@@ -278,12 +280,12 @@ header {
 
 /* Samsung Products */
 .product-box img.samsung-product1 {
-    width: 140px;
+    width: 150px;
     height: 165px;
 }
 
 .product-box img.samsung-product2 {
-    width: 155px;
+    width: 220px;
     height: 180px;
     border-radius: 15px;
 }
