@@ -31,15 +31,17 @@ header {
 .nav-container {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Allows nav links to take available space */
+    justify-content: space-between;
+    width: 100%;
 }
 
-/* Navigation Links */
+/* Ensures links stay to the left */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
-    padding-left: 20px; /* Adjusts spacing from the logo */
+    gap: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 /* Navbar Links */
@@ -50,14 +52,48 @@ header {
     font-weight: bold;
 }
 
-/* Login/Register Positioning */
-.auth-buttons {
+/* Flex container for the bell and login button */
+.nav-right {
     display: flex;
-    gap: 15px;
-    cursor: pointer;
+    align-items: center;
+    gap: 5px; /* Slightly increase spacing between elements */
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+/* Notification Bell */
+.notification-bell {
+    text-decoration: none !important;
     color: white;
-    font-size: 1em;
-    margin-left: auto; /* Pushes Login/Register to the far right */
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 0px;
+    margin-right: 5px; /* Adjust this value to move the bell slightly away */
+}
+
+
+/* Notification Bell Icon */
+.notification-bell .bell-icon {
+    font-size: 24px;
+}
+
+/* Notification Dot (red circle) */
+.notification-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: none;
+}
+
+/* Show notification dot when there are unread notifications */
+.notification-bell.has-notifications .notification-dot {
+    display: block;
 }
 
 
@@ -71,7 +107,7 @@ header {
 
 /* Profile Box */
 .profile-box {
-    background: linear-gradient(to right, #3d5a7b, #4c6986)!important;
+    background: linear-gradient(to right, #668197dd, #4f82ab)!important;
     padding: 25px;
     border-radius: 10px;
     display: flex;
@@ -104,21 +140,21 @@ header {
 }
 
 .chat-button {
-    background: #3498db;
+    background: #326282 !important;
     color: white;
 }
 
 .chat-button:hover {
-    background: #2980b9;
+    background: #355c76 !important;
 }
 
 .follow-button {
-    background: #27ae60;
+    background: #10bd80 !important;
     color: white;
 }
 
 .follow-button:hover {
-    background: #219150;
+    background: #10bd80 !important;
 }
 
 
