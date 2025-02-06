@@ -71,13 +71,13 @@ header {
 
 /* Profile Box */
 .profile-box {
-    background: linear-gradient(to right, #1e3a5a, #2c3e50);
+    background: linear-gradient(to right, #3d5a7b, #4c6986)!important;
     padding: 25px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 750px;
+    max-width: 990px;
     margin: 20px auto;
     color: white;
 }
@@ -331,10 +331,78 @@ header {
 /* Footer */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     background-color: #333;
     color: white;
+    width: 100%;
+    position: relative; /* Default positioning */
+    bottom: 0;
 }
+
+/* Ensures the footer remains at the bottom */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Makes sure footer elements are aligned */
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    padding: 10px 0;
+}
+
+/* Adjusts content spacing */
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Footer */
+@media (max-width: 1200px) {
+    .footer-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 12px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 10px;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
+}
+
 
 
 
