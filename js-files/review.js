@@ -22,8 +22,32 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "John",
             rating: 5,
             text: "Good quality products. Will recommend to my friends.",
-            date: "2025-01-27"
-        }
+            date: "2025-01-30"
+        },
+        {
+            name: "Xavier",
+            rating: 5,
+            text: "The customer support team resolved my issue quickly and professionally.",
+            date: "2025-01-31"
+        },
+        {
+            name: "Bobby",
+            rating: 5,
+            text: "Top-notch quality paired with fantastic service—what more could you ask for?.",
+            date: "2025-02-01"
+        },
+        {
+            name: "Khloe",
+            rating: 5,
+            text: "Amazing service—quick, friendly, and hassle-free!",
+            date: "2025-02-02"
+        },
+        {
+            name: "Jane",
+            rating: 5,
+            text: "I was pleasantly surprised by how fast my order arrived!",
+            date: "2025-02-03"
+        },
     ];
 
     // Show the form when the "Add review" button is clicked
