@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Shop - MokeSell</title>
+    <link rel="stylesheet" href="../css-files/shop.css">
 
-    <!-- ✅ Corrected CSS Path -->
-    <link rel="stylesheet" href="../css-files/style.css">
-
-    <!-- ✅ Corrected JavaScript Path -->
-    <script src="../js-files/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
+    <script type="module" src="../js-files/shop.js"></script>
 
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/67933421825083258e0a6ece/1iibg790o';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/67933421825083258e0a6ece/1iibg790o';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
         })();
     </script>
 </head>
@@ -33,6 +32,12 @@
                 <li><a href="../html-files/shop.html">Shop</a></li>
                 <li><a href="../html-files/about-you.html">About You</a></li>
             </ul>
+            <div class="nav-right">
+                <a href="../html-files/notification.html" class="notification-bell">
+                    <img src="../Images/notification.png" alt="Notifications">
+                    <span class="notification-dot"></span>
+                </a>
+            </div>
             <div class="auth-buttons">
                 <span id="auth-toggle">Login / Register</span>
             </div>
@@ -40,125 +45,36 @@
     </header>
 
     <section class="container">
-        <!-- Filter Section -->
         <section class="filter-section">
             <h3>Filter Products</h3>
-
             <h4>Brand</h4>
-            <label><input type="checkbox" class="filter-checkbox" value="apple"> Apple</label>
-            <label><input type="checkbox" class="filter-checkbox" value="samsung"> Samsung</label>
-
+            <label><input type="checkbox" name="brand" value="Apple"> Apple</label>
+            <label><input type="checkbox" name="brand" value="Samsung"> Samsung</label>
             <h4>Type</h4>
-            <label><input type="checkbox" class="filter-checkbox" value="iphone"> iPhone</label>
-            <label><input type="checkbox" class="filter-checkbox" value="ipad"> iPad</label>
-            <label><input type="checkbox" class="filter-checkbox" value="apple_display"> Apple Displays (monitor)</label>
-            <label><input type="checkbox" class="filter-checkbox" value="macbook"> Macbook</label>
-            <label><input type="checkbox" class="filter-checkbox" value="airpods"> Airpods</label>
-            <label><input type="checkbox" class="filter-checkbox" value="apple_headphone"> Apple Headphone</label>
-            <label><input type="checkbox" class="filter-checkbox" value="galaxy_phone"> Galaxy Phone</label>
-            <label><input type="checkbox" class="filter-checkbox" value="galaxy_tab"> Galaxy Tab</label>
-            <label><input type="checkbox" class="filter-checkbox" value="galaxy_buds"> Galaxy Buds</label>
-            <label><input type="checkbox" class="filter-checkbox" value="samsung_monitor"> Samsung Monitor</label>
-            <label><input type="checkbox" class="filter-checkbox" value="samsung_galaxy_book"> Samsung Galaxy Book</label>
-
+            <label><input type="checkbox" name="type" value="iphone"> iPhone</label>
+            <label><input type="checkbox" name="type" value="ipad"> iPad</label>
+            <label><input type="checkbox" name="type" value="Macbook"> Macbook</label>
+            <label><input type="checkbox" name="type" value="Airpods"> Airpods</label>
+            <label><input type="checkbox" name="type" value="Apple Displays (monitor)"> Apple Displays (monitor)</label>
+            <label><input type="checkbox" name="type" value="Apple Headphone"> Apple Headphone</label>
+            <label><input type="checkbox" name="type" value="Galaxy Phone"> Galaxy Phone</label>
+            <label><input type="checkbox" name="type" value="Galaxy Tab"> Galaxy Tab</label>
+            <label><input type="checkbox" name="type" value="Galaxy Buds"> Galaxy Buds</label>
+            <label><input type="checkbox" name="type" value="Samsung Monitor"> Samsung Monitor</label>
+            <label><input type="checkbox" name="type" value="Samsung Galaxy Book"> Samsung Galaxy Book</label>
             <button id="searchFilters">Search</button>
         </section>
 
-        <!-- Main Content -->
         <section class="main-content">
             <div class="search-bar">
-                <input type="text" placeholder="Search for products here...">
-                <button>&#128269;</button>
+                <input type="text" id="searchInput" placeholder="Search for products here...">
+                <button id="searchButton">&#128269;</button>
             </div>
-
-            <!-- Product Section -->
-            <section class="products-section">
-                <section class="product-card" data-category="iphone">
-                    <img src="../Images/iphone-3.png" alt="iPhone">
-                    <div class="details">
-                        <h4>iPhone</h4>
-                        <p>Apple iPhone description.</p>
-                        <div class="buttons">
-                            <button>Add to cart</button>
-                            <a href="../html-files/follow-feature.html">
-                                <button class="follow-button">Follow</button>
-                            </a>
-                        </div>
-                    </div>
+            <section class="products-section" id="product-container">
                 </section>
-
-                <section class="product-card" data-category="ipad">
-                    <img src="../Images/ipad.jpg" alt="iPad">
-                    <div class="details">
-                        <h4>iPad</h4>
-                        <p>Apple iPad description.</p>
-                        <div class="buttons">
-                            <button>Add to cart</button>
-                            <a href="../html-files/follow-feature.html">
-                                <button class="follow-button">Follow</button>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="product-card" data-category="macbook">
-                    <img src="../Images/macbook.jpg" alt="Macbook">
-                    <div class="details">
-                        <h4>Macbook</h4>
-                        <p>Apple Macbook description.</p>
-                        <div class="buttons">
-                            <button>Add to cart</button>
-                            <a href="../html-files/follow-feature.html">
-                                <button class="follow-button">Follow</button>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="product-card" data-category="airpods">
-                    <img src="..Images/airpods.jpg" alt="Airpods">
-                    <div class="details">
-                        <h4>Airpods</h4>
-                        <p>Apple Airpods description.</p>
-                        <div class="buttons">
-                            <button>Add to cart</button>
-                            <a href="../html-files/follow-feature.html">
-                                <button class="follow-button">Follow</button>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="product-card" data-category="galaxy_phone">
-                    <img src="Images/galaxy_phone.jpg" alt="Galaxy Phone">
-                    <div class="details">
-                        <h4>Galaxy Phone</h4>
-                        <p>Samsung Galaxy Phone description.</p>
-                        <div class="buttons">
-                            <button>Add to cart</button>
-                            <a href="../html-files/follow-feature.html">
-                                <button class="follow-button">Follow</button>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="product-card" data-category="samsung_monitor">
-                    <img src="Images/samsung_monitor.jpg" alt="Samsung Monitor">
-                    <div class="details">
-                        <h4>Samsung Monitor</h4>
-                        <p>Samsung Monitor description.</p>
-                        <div class="buttons">
-                            <button>Add to cart</button>
-                            <a href="../html-files/follow-feature.html">
-                                <button class="follow-button">Follow</button>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </section>
         </section>
     </section>
+
     <footer>
         <p>&copy; 2025 MokeSell. All rights reserved.</p>
     </footer>
