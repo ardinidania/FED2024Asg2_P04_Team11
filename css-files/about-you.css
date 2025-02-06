@@ -51,11 +51,13 @@ header {
     font-weight: bold;
 }
 
-/* Ensures the bell is at the far right */
+/* Flex container for the bell and login button */
 .nav-right {
     display: flex;
     align-items: center;
-    margin-left: 920px
+    gap: 5px; /* Slightly increase spacing between elements */
+    margin-left: auto;
+    justify-content: flex-end;
 }
 
 /* Notification Bell */
@@ -65,8 +67,10 @@ header {
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: auto; /* Pushes to the far right */
+    margin-left: 0px;
+    margin-right: 5px; /* Adjust this value to move the bell slightly away */
 }
+
 
 /* Notification Bell Icon */
 .notification-bell .bell-icon {
@@ -85,6 +89,7 @@ header {
     border: 2px solid white;
     display: none;
 }
+
 
 /* Show notification dot when there are unread notifications */
 .notification-bell.has-notifications .notification-dot {
