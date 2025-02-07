@@ -93,7 +93,7 @@ Media
 22) add image icon : https://toppng.com/free-image/add-camera-icon-icon-add-PNG-free-PNG-Images_127591#google_vignette 
 23) notification bell icon : https://www.flaticon.com/free-icon/notification_1827370?term=bell&page=1&position=13&origin=tag&related_id=1827370 
 24) MokeSell icon : https://logo.com/stitch/new-logo?template_id=tpl_5YD9pfs0qhMyKkntW4&variables=%257B%2522text%2522%253A%257B%2522wordmark%2522%253A%2522MokeSell%2522%252C%2522slogan%2522%253A%2522%2522%252C%2522monogram_wordmark%2522%253A%2522M%2522%257D%252C%2522icon_id%2522%253A%2522NOUN_PROJECT_61546%2522%252C%2522icon_name%2522%253A%2522sell%2522%252C%2522icon_preview%2522%253A%2522https%253A%252F%252Fstatic.thenounproject.com%252Fpng%252F61546-200.png%2522%252C%2522icon_type%2522%253A%2522shape%2522%257D&tight_bounds=true&returnTo=%2Flogo-ideas 
-
+25) default avatar image : https://www.pinterest.com/pin/black-default-profile-picture--85638830413249479/
 
 
 Content 
