@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../css-files/shop.css">
+    <link rel="stylesheet" href="../css-files/cart.css">
+    <link rel="stylesheet" href="../css-files/payment.css"> <!-- Link to custom payment styles -->
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+        <nav>
+            <a href="../html-files/index.html">Home</a>
+            <a href="../html-files/shop.html">Shop</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cart-summary">
+            <h3>Payment Information</h3>
+            <form id="payment-form" class="payment-form">
+                <input type="text" id="card-holder-name" placeholder="Cardholder Name" required>
+                <input type="text" id="card-number" placeholder="Card Number (e.g., 4242 4242 4242 4242)" required>
+                <input type="text" id="expiry-date" placeholder="Expiry Date (MM/YY)" required>
+                <input type="text" id="cvv" placeholder="CVV (3 digits)" required>
+                <button id="submit-button" type="button">Pay Now</button>
+                <p id="payment-errors" class="payment-errors"></p>
+            </form>
+            <p id="payment-success" class="payment-success" style="display: none;">Payment successful!</p>
+        </section>
+       
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MokeSell. All rights reserved.</p>
+    </footer>
+
+    <script src="../js-files/payment.js"></script>
+</body>
+</html>

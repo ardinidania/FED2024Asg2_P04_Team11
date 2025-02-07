@@ -1,0 +1,40 @@
+.payment-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form input,
+.payment-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.payment-form button {
+    background-color: #FFA500;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.payment-form button:hover {
+    background-color: #e69500;
+}
+
+.payment-success {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.payment-errors {
+    color: red;
+    text-align: center;
+}
