@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submit-button');
     const paymentErrors = document.getElementById('payment-errors');
     const paymentSuccess = document.getElementById('payment-success');
+    const successAnimation = document.getElementById('payment-success-animation'); // ✅ Animation Element
 
     submitButton.addEventListener('click', () => {
         // Simulate payment validation and processing
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         paymentErrors.textContent = '';
         paymentSuccess.style.display = 'none';
+        successAnimation.classList.add("hidden"); // Hide animation initially
 
         // Simple validation (for demo purposes only)
         if (!cardHolderName || !cardNumber || !expiryDate || !cvv) {
@@ -50,24 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('paymentReceipt', JSON.stringify(receiptData));
             localStorage.removeItem('shoppingCart'); // Clear cart after payment
 
-            // Display success message
-            paymentSuccess.style.display = 'block';
-            paymentSuccess.textContent = 'Payment successful!';
+            // ✅ Show animation
+            successAnimation.classList.remove("hidden");
 
-            // Clear input fields
-            document.getElementById('card-holder-name').value = '';
-            document.getElementById('card-number').value = '';
-            document.getElementById('expiry-date').value = '';
-            document.getElementById('cvv').value = '';
+            // ✅ Hide button and errors
+            submitButton.style.display = "none";
+            paymentErrors.style.display = "none";
 
-            // Re-enable the button after processing
-            submitButton.disabled = false;
-            submitButton.textContent = 'Pay Now';
-
-            // Redirect to the success page after 2 seconds
+            // ✅ After animation, show success message
             setTimeout(() => {
-                window.location.href = '../html-files/success.html';
-            }, 2000);
+                paymentSuccess.style.display = 'block';
+                paymentSuccess.textContent = 'Payment successful!';
+
+                // Clear input fields
+                document.getElementById('card-holder-name').value = '';
+                document.getElementById('card-number').value = '';
+                document.getElementById('expiry-date').value = '';
+                document.getElementById('cvv').value = '';
+
+                // ✅ Redirect to success page after 3 seconds
+                setTimeout(() => {
+                    window.location.href = '../html-files/success.html';
+                }, 3000);
+            }, 2000); // Animation plays for 2 seconds
         }, 2000);
     });
 });
+
