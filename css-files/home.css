@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family:'Poppins', Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
 }
@@ -14,7 +14,7 @@ header {
     padding: 15px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures proper spacing */
+    justify-content: space-between; 
 }
 
 /* Logo Styling */
@@ -22,14 +22,14 @@ header {
     font-size: 1.8em;
     font-weight: bold;
     color: white;
-    margin-right: 20px; /* Adds spacing between the logo and "Home" */
+    margin-right: 20px; 
 }
 
 /* Navigation Container */
 .nav-container {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Allows nav links to take available space */
+    flex-grow: 1; 
 }
 
 /* Navigation Links */
@@ -37,7 +37,7 @@ header {
     list-style: none;
     display: flex;
     gap: 25px;
-    padding-left: 20px; /* Adjusts spacing from the logo */
+    padding-left: 20px; 
 }
 
 /* Navbar Links */
@@ -55,13 +55,13 @@ header {
     cursor: pointer;
     color: white;
     font-size: 1em;
-    margin-left: auto; /* Pushes Login/Register to the far right */
+    margin-left: auto; 
 }
 
 /* Logo Styling */
 .logo img {
-    width: 150px;  /* Adjust width */
-    height: auto;  /* Maintain aspect ratio */
+    width: 150px; 
+    height: auto;  
     display: block;
 }
 
@@ -73,8 +73,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px; /* Reduced padding */
-    height: 80vh; /* Reduced height */
+    padding: 40px; 
+    height: 80vh; 
     background: linear-gradient(to right, #dce6f0, #b0b8c1);
 }
 
@@ -85,7 +85,7 @@ header {
 
 .hero h1 {
     font-size: 3.5rem;
-    margin-bottom: 25px; /* Increased spacing below heading */
+    margin-bottom: 25px; 
 }
 
 .shop-now {
@@ -98,7 +98,7 @@ header {
     border-radius: 5px;
     text-decoration: none;
     transition: background 0.3s ease-in-out;
-    margin-top: 20px; /* Added space above the button */
+    margin-top: 20px;
 }
 
 .shop-now:hover {
@@ -114,7 +114,7 @@ header {
 }
 
 .hero-image img {
-    max-width: 80%; /* Reduced size slightly */
+    max-width: 80%; 
     max-height: 80%;
     border-radius: 8px;
     object-fit: cover;

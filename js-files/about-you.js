@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle Profile Picture Upload
     if (fileInput && profilePic && uploadButton) {
         uploadButton.addEventListener("click", function () {
-            fileInput.click(); // Simulate click on hidden file input
+            fileInput.click(); 
         });
 
         fileInput.addEventListener("change", function (event) {
