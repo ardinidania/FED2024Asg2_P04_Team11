@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="../css-files/shop.css">
+    <link rel="stylesheet" href="../css-files/cart.css">
+</head>
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <nav>
+            <a href="../html-files/index.html">Home</a>
+            <a href="../html-files/shop.html">Shop</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cart-items">
+            <h2>Items in Your Cart</h2>
+            <div id="cart-container"></div>
+        </section>
+
+        <section class="cart-summary">
+            <h3>Cart Summary</h3>
+            <p>Total: <span id="cart-total">$0.00</span></p>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </section>
+    </main>
+
+    <!-- Link external script -->
+    <script src="../js-files/cart.js"></script>
+
+    <footer>
+        <p>&copy; 2025 MokeSell. All rights reserved.</p>
+    </footer>
+</body>
+</html>

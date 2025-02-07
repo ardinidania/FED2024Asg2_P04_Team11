@@ -87,6 +87,12 @@ header {
     display: block;
 }
 
+.cart-icon .fa-shopping-cart {
+    font-size: 20px;
+    color: orange;
+}
+
+
 /* ============================================================= */
 /* General Reset */
 * {

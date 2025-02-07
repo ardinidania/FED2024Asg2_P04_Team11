@@ -19,37 +19,69 @@ const db = getFirestore(app);
 
 // Get elements
 const productContainer = document.querySelector(".products-section");
-const checkboxes = document.querySelectorAll(".filter-checkbox");
 const searchInput = document.querySelector(".search-bar input");
-const searchButton = document.getElementById("searchFilters"); // Ensure button has this ID
+const searchButton = document.getElementById("searchFilters");
+
+// ✅ Update cart count in the header
+function updateCartCount() {
+    const cartIcon = document.querySelector('.fas.fa-shopping-cart');
+    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+    // Update or create the cart count badge
+    let countBadge = cartIcon.querySelector('.cart-count');
+    if (!countBadge) {
+        countBadge = document.createElement('span');
+        countBadge.classList.add('cart-count');
+        cartIcon.appendChild(countBadge);
+    }
+    countBadge.textContent = count;
+}
+
+// ✅ Add an item to the cart
+function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    const existingProduct = cart.find(item => item.id === product.id);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: 1,
+            image: product.image || "https://via.placeholder.com/150"
+        });
+    }
+
+    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    updateCartCount();
+    alert(`${product.name} added to cart!`);
+}
 
 // ✅ Fetch products from Firestore, then apply search locally
 async function fetchProducts(filters = {}, searchQuery = "") {
     try {
         let productQuery = collection(db, "products");
 
-        // Debugging: Log selected filters before querying
         console.log("Selected Filters:", filters);
         console.log("Search Query:", searchQuery);
 
         let conditions = [];
 
-        // Apply brand filter
         if (filters.brand && filters.brand.length > 0) {
             conditions.push(where("brand", "in", filters.brand));
         }
 
-        // Apply type filter
         if (filters.type && filters.type.length > 0) {
             conditions.push(where("type", "in", filters.type));
         }
 
-        // Apply conditions if filters exist
         if (conditions.length > 0) {
             productQuery = query(productQuery, ...conditions);
         }
 
-        // Fetch data from Firestore
         const querySnapshot = await getDocs(productQuery);
         let products = [];
 
@@ -57,16 +89,13 @@ async function fetchProducts(filters = {}, searchQuery = "") {
             products.push({ id: doc.id, ...doc.data() });
         });
 
-        console.log("Fetched Products:", products);
-
-        // 🔥 **NEW: Apply Search Locally**
         if (searchQuery) {
-            searchQuery = searchQuery.toLowerCase(); // Convert search to lowercase
+            searchQuery = searchQuery.toLowerCase();
             products = products.filter(product =>
                 product.name.toLowerCase().includes(searchQuery) ||
-                product.description.toLowerCase().includes(searchQuery) ||
-                product.type.toLowerCase().includes(searchQuery) ||
-                product.brand.toLowerCase().includes(searchQuery)
+                (product.description || "").toLowerCase().includes(searchQuery) ||
+                (product.type || "").toLowerCase().includes(searchQuery) ||
+                (product.brand || "").toLowerCase().includes(searchQuery)
             );
         }
 
@@ -90,20 +119,22 @@ function displayProducts(products) {
         const productCard = document.createElement("div");
         productCard.classList.add("product-card");
 
-        let productImage = product.image ? product.image : "https://via.placeholder.com/150";
-
         productCard.innerHTML = `
-            <img src="${productImage}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/150'">
+            <img src="${product.image || 'https://via.placeholder.com/150'}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/150'">
             <h4>${product.name}</h4>
-            <p>${product.description}</p>
+            <p>${product.description || ''}</p>
             <strong>$${product.price.toFixed(2)}</strong>
             <div class="buttons">
-                <button>Add to cart</button>
+                <button class="add-to-cart-btn">Add to cart</button>
                 <a href="../html-files/follow-feature.html">
                     <button class="follow-button">Follow</button>
                 </a>
             </div>
         `;
+
+        // Set up add-to-cart button event listener
+        const addToCartButton = productCard.querySelector('.add-to-cart-btn');
+        addToCartButton.addEventListener('click', () => addToCart(product));
 
         productContainer.appendChild(productCard);
     });
@@ -115,26 +146,15 @@ function updateFilters() {
     const selectedTypes = [...document.querySelectorAll('input[name="type"]:checked')].map(cb => cb.value);
     const searchQuery = searchInput.value.trim();
 
-    // Fetch products with filters and search applied
     fetchProducts({ brand: selectedBrands, type: selectedTypes }, searchQuery);
-}
-
-// ✅ Restore All Products When No Search or Filters Are Applied
-function restoreProducts() {
-    searchInput.value = ""; // Clear search field
-    checkboxes.forEach(cb => cb.checked = false); // Uncheck all filters
-    fetchProducts(); // Load all products
 }
 
 // ✅ Handle Search Button Click
 searchButton.addEventListener("click", updateFilters);
 searchInput.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") updateFilters(); // Apply search on pressing "Enter"
+    if (event.key === "Enter") updateFilters();
 });
 
 // ✅ Load All Products When Page Loads
 fetchProducts();
-
-
-
-
+updateCartCount();

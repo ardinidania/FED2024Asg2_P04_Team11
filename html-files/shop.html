@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - MokeSell</title>
     <link rel="stylesheet" href="../css-files/shop.css">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js"></script>
@@ -13,11 +15,11 @@
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/67933421825083258e0a6ece/1iibg790o';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/67933421825083258e0a6ece/1iibg790o';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1,s0);
         })();
     </script>
@@ -33,10 +35,21 @@
                 <li><a href="../html-files/about-you.html">About You</a></li>
             </ul>
             <div class="nav-right">
+                <!-- Cart Icon comes first -->
+                <a href="../html-files/cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <!-- Notification bell icon -->
                 <a href="../html-files/notification.html" class="notification-bell">
                     <img src="../Images/notification.png" alt="Notifications">
                     <span class="notification-dot"></span>
                 </a>
+            </div>
+            
+            
+            
+                
+
             </div>
             <div class="auth-buttons">
                 <span id="auth-toggle">Login / Register</span>
@@ -70,13 +83,131 @@
                 <input type="text" id="searchInput" placeholder="Search for products here...">
                 <button id="searchButton">&#128269;</button>
             </div>
+
+            <!-- Products Section -->
             <section class="products-section" id="product-container">
-                </section>
+             <!-- Product Cards -->
+<div class="product" data-id="1" data-name="Apple AirPods Pro 2" data-price="249.00" data-image="images/airpods-pro-2.jpg">
+    <img src="images/airpods-pro-2.jpg" alt="Apple AirPods Pro 2" class="product-image">
+    <h3>Apple AirPods Pro 2</h3>
+    <p>Noise-canceling wireless AirPods with spatial audio</p>
+    <p>Price: $249.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="2" data-name="iPad Pro M2" data-price="1199.00" data-image="images/ipad-pro-m2.jpg">
+    <img src="images/ipad-pro-m2.jpg" alt="iPad Pro M2" class="product-image">
+    <h3>iPad Pro M2</h3>
+    <p>A professional-grade iPad with M2 chip for creative work</p>
+    <p>Price: $1199.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="3" data-name="iPad Air 5th Gen" data-price="799.00" data-image="images/ipad-air-5th-gen.jpg">
+    <img src="images/ipad-air-5th-gen.jpg" alt="iPad Air 5th Gen" class="product-image">
+    <h3>iPad Air 5th Gen</h3>
+    <p>Lightweight yet powerful iPad Air for students and professionals</p>
+    <p>Price: $799.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="4" data-name="Samsung Galaxy Book 3" data-price="1299.00" data-image="images/galaxy-book-3.jpg">
+    <img src="images/galaxy-book-3.jpg" alt="Samsung Galaxy Book 3" class="product-image">
+    <h3>Samsung Galaxy Book 3</h3>
+    <p>A sleek and lightweight laptop with a powerful Intel processor</p>
+    <p>Price: $1299.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="5" data-name="Samsung Galaxy S24 Ultra" data-price="1599.00" data-image="images/galaxy-s24-ultra.jpg">
+    <img src="images/galaxy-s24-ultra.jpg" alt="Samsung Galaxy S24 Ultra" class="product-image">
+    <h3>Samsung Galaxy S24 Ultra</h3>
+    <p>Samsung’s most advanced smartphone with AI-powered camera</p>
+    <p>Price: $1599.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="6" data-name="Apple AirPods Max" data-price="599.00" data-image="images/airpods-max.jpg">
+    <img src="images/airpods-max.jpg" alt="Apple AirPods Max" class="product-image">
+    <h3>Apple AirPods Max</h3>
+    <p>High-fidelity Apple headphones with noise cancellation</p>
+    <p>Price: $599.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="7" data-name="Samsung Galaxy Buds 2 Pro" data-price="199.00" data-image="images/galaxy-buds-2-pro.jpg">
+    <img src="images/galaxy-buds-2-pro.jpg" alt="Samsung Galaxy Buds 2 Pro" class="product-image">
+    <h3>Samsung Galaxy Buds 2 Pro</h3>
+    <p>Premium wireless earbuds with ANC and studio-quality sound</p>
+    <p>Price: $199.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="8" data-name="Samsung Galaxy Tab S9 Ultra" data-price="1299.00" data-image="images/galaxy-tab-s9-ultra.jpg">
+    <img src="images/galaxy-tab-s9-ultra.jpg" alt="Samsung Galaxy Tab S9 Ultra" class="product-image">
+    <h3>Samsung Galaxy Tab S9 Ultra</h3>
+    <p>The most powerful Samsung tablet with a stunning AMOLED display</p>
+    <p>Price: $1299.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="9" data-name="Samsung Galaxy Z Fold 5" data-price="1999.00" data-image="images/galaxy-z-fold-5.jpg">
+    <img src="images/galaxy-z-fold-5.jpg" alt="Samsung Galaxy Z Fold 5" class="product-image">
+    <h3>Samsung Galaxy Z Fold 5</h3>
+    <p>Foldable phone with powerful multitasking and high refresh rate display</p>
+    <p>Price: $1999.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="10" data-name="Apple Studio Display" data-price="1499.00" data-image="images/apple-studio-display.jpg">
+    <img src="images/apple-studio-display.jpg" alt="Apple Studio Display" class="product-image">
+    <h3>Apple Studio Display</h3>
+    <p>5K Retina display with incredible color accuracy for professionals</p>
+    <p>Price: $1499.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="11" data-name="MacBook Pro M3" data-price="2499.00" data-image="images/macbook-pro-m3.jpg">
+    <img src="images/macbook-pro-m3.jpg" alt="MacBook Pro M3" class="product-image">
+    <h3>MacBook Pro M3</h3>
+    <p>Powerful MacBook Pro with M3 chip and Liquid Retina XDR display</p>
+    <p>Price: $2499.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="12" data-name="iPhone 14 Pro" data-price="1299.00" data-image="images/iphone-14-pro.jpg">
+    <img src="images/iphone-14-pro.jpg" alt="iPhone 14 Pro" class="product-image">
+    <h3>iPhone 14 Pro</h3>
+    <p>The flagship iPhone with ProMotion display and A16 chip</p>
+    <p>Price: $1299.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="13" data-name="iPhone 16 Pro" data-price="1899.00" data-image="images/iphone-16-pro.jpg">
+    <img src="images/iphone-16-pro.jpg" alt="iPhone 16 Pro" class="product-image">
+    <h3>iPhone 16 Pro</h3>
+    <p>The latest Apple iPhone with advanced features</p>
+    <p>Price: $1899.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+<div class="product" data-id="14" data-name="Samsung 32-inch 4K Monitor" data-price="399.00" data-image="images/samsung-4k-monitor.jpg">
+    <img src="images/samsung-4k-monitor.jpg" alt="Samsung 32-inch 4K Monitor" class="product-image">
+    <h3>Samsung 32-inch 4K Monitor</h3>
+    <p>A stunning 4K UHD monitor with HDR10 support</p>
+    <p>Price: $399.00</p>
+    <button class="add-to-cart">Add to cart</button>
+</div>
+
+            </section>
         </section>
     </section>
+    
+    
 
     <footer>
         <p>&copy; 2025 MokeSell. All rights reserved.</p>
     </footer>
+    <script src="../js-files/cart.js"></script>
 </body>
 </html>
