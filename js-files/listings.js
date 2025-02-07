@@ -1,13 +1,12 @@
+const API_KEY = "09bebc4e7a2e94327256c383312c6a98"; 
 
-//=======================================================================================
-//Javascript for listing page
 document.addEventListener("DOMContentLoaded", function () {
     const uploadBox = document.getElementById("uploadBox");
     const uploadInput = document.getElementById("imageUpload");
     const uploadIcon = document.getElementById("uploadIcon");
     const selectPhotosBtn = document.getElementById("selectPhotosBtn");
     const imagePreviewContainer = document.getElementById("imagePreviewContainer");
-    
+
     let uploadedImages = [];
 
     // Open file explorer on click
@@ -54,19 +53,62 @@ document.addEventListener("DOMContentLoaded", function () {
             if (file.type.startsWith("image/")) {
                 const reader = new FileReader();
                 reader.onload = function (e) {
-                    addImage(e.target.result);
+                    uploadToImgBB(e.target.result); // Upload directly to ImgBB
                 };
                 reader.readAsDataURL(file);
-                uploadedImages.push(file);
             } else {
                 alert("Only images are allowed.");
             }
         }
     }
 
-    function addImage(src) {
-        const img = document.createElement("img");
-        img.src = src;
-        imagePreviewContainer.appendChild(img);
+    function uploadToImgBB(imageData) {
+        const formData = new FormData();
+        formData.append("key", API_KEY);
+        formData.append("image", imageData.split(",")[1]); // Remove Base64 header
+
+        fetch("https://api.imgbb.com/1/upload", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                addImage(data.data.url); // Display uploaded image
+                console.log("Uploaded Image URL: ", data.data.url);
+            } else {
+                alert("Image upload failed. Try again.");
+            }
+        })
+        .catch(error => {
+            console.error("Error uploading to ImgBB:", error);
+            alert("Error uploading image.");
+        });
     }
+
+    function addImage(src) {
+    const uploadBox = document.getElementById("uploadBox");
+    let imagePreviewContainer = document.getElementById("imagePreviewContainer");
+
+    // Ensure the container exists inside the upload box
+    if (!imagePreviewContainer) {
+        console.error("Error: imagePreviewContainer not found!");
+        return;
+    }
+
+    // Create the image element
+    const img = document.createElement("img");
+    img.src = src;
+    img.style.width = "100px";  // Matches CSS
+    img.style.height = "100px"; // Matches CSS
+    img.style.objectFit = "cover"; // Prevents stretching
+    img.style.borderRadius = "5px";
+    img.style.border = "1px solid #ddd";
+    img.style.margin = "5px"; // Adds spacing
+
+    // Append image to preview container
+    imagePreviewContainer.appendChild(img);
+}
+
+    
 });

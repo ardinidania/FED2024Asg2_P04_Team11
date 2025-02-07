@@ -397,6 +397,25 @@ header {
     height: 180px;
 }
 
+
+#imagePreviewContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 280px; /* Matches upload box width */
+    margin-top: 15px;
+    gap: 10px;
+}
+
+#imagePreviewContainer img {
+    width: 80px;  /* Adjust image width */
+    height: 80px; /* Adjust image height */
+    object-fit: cover; /* Ensures images fit without distortion */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
 /**************************************************************************/
 footer {
     text-align: center;

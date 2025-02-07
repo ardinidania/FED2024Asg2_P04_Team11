@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,6 @@
 
     <!-- ✅ Corrected CSS Path -->
     <link rel="stylesheet" href="../css-files/listings.css">
-
-    <!-- ✅ Corrected JavaScript Path -->
-    <script src="../js-files/script.js"></script>
 
     <!-- Chat Widget -->
     <script type="text/javascript">
@@ -50,7 +47,7 @@
     <div class="product-listing-page"> 
         <main class="container">
             
-            <!-- List Your Products Section -->
+            <!-- ✅ List Your Products Section -->
             <div class="list-products-container">
                 <h2 class="section-title">List your products</h2>
                 <section class="list-products">
@@ -59,14 +56,16 @@
                         <div class="upload-icon" id="uploadIcon">
                             <img src="../Images/add-image-icon.png" alt="Upload Icon">
                         </div>
-
                         <button class="upload-btn" id="selectPhotosBtn">Select photos</button>
                         <p>(up to 30 photos)</p>
                     </div>
                 </section>
+
+                <!-- ✅ Fixed: Added Image Preview Container -->
+                <div id="imagePreviewContainer"></div>
             </div>
 
-            <!-- Sell to MokeSell Section -->
+            <!-- ✅ Sell to MokeSell Section -->
             <div class="sell-section-container">
                 <h2 class="section-title">Sell to MokeSell</h2>
                 <section class="sell-section">
@@ -101,7 +100,11 @@
     <footer>
         <p>&copy; 2025 MokeSell. All rights reserved.</p>
     </footer>
+
+    <!-- ✅ Fix: Moved Script to Bottom for Proper Loading -->
+    <script src="../js-files/listings.js"></script>
 </body>
 </html>
+
 
 
