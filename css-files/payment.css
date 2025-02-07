@@ -1,43 +1,133 @@
+/* Navbar styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+/* Responsive navbar for mobile */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav a {
+        margin: 5px 0;
+    }
+}
+
+/* Payment form container */
 .payment-form {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 40px auto;
+    padding: 20px 30px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
+/* Input fields and button */
 .payment-form input,
 .payment-form button {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 12px 15px;
+    margin: 12px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Input focus effect */
+.payment-form input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+/* Payment button */
 .payment-form button {
     background-color: #FFA500;
     color: white;
     font-weight: bold;
     cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Button hover and focus effects */
 .payment-form button:hover {
     background-color: #e69500;
+    transform: scale(1.05);
 }
 
+.payment-form button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.4);
+}
+
+/* Success and error messages */
 .payment-success {
-    color: green;
+    color: #4CAF50;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #d4edda;
+    border-radius: 4px;
+    background-color: #e8f5e9;
 }
 
 .payment-errors {
-    color: red;
+    color: #f44336;
+    font-weight: bold;
     text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #f8d7da;
+    border-radius: 4px;
+    background-color: #fdecea;
 }
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+    .payment-form {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .payment-form input,
+    .payment-form button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
 
 .hidden {
     display: none;
