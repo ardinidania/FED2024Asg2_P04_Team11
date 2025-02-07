@@ -58,6 +58,14 @@ header {
     margin-left: auto; /* Pushes Login/Register to the far right */
 }
 
+/* Logo Styling */
+.logo img {
+    width: 150px;  /* Adjust width */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;
+}
+
+
 
 /* ============================================================= */
 /* Hero Section */

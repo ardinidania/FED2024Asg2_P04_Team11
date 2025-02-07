@@ -19,11 +19,10 @@ header {
 }
 
 /* Logo Styling */
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: white;
-    margin-right: 20px; /* Adds spacing between the logo and "Home" */
+.logo img {
+    width: 150px;  /* Adjust width */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;
 }
 
 /* Navigation Container */
