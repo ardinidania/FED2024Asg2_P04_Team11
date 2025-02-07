@@ -86,4 +86,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// Fetch a random user from randomuser.me API
+function fetchRandomUser() {
+    fetch("https://randomuser.me/api/")
+        .then(response => response.json())
+        .then(data => {
+            const user = data.results[0];
+
+            // ✅ Set Profile Picture
+            document.getElementById("profile-pic").src = user.picture.large;
+
+            // ✅ Set Profile Name
+            document.getElementById("profile-name").textContent = `${user.name.first} ${user.name.last}`;
+        })
+        .catch(error => console.error("Error fetching user:", error));
+}
+
+// ✅ Call the function when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+    fetchRandomUser();
+});
 
