@@ -1,3 +1,39 @@
+/* General link styles */
+a {
+    color: #bbb; /* Default gray color for all links */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: white;
+}
+
+/* Header navigation link styles */
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px; /* Add space between links */
+    padding: 10px;
+}
+
+header nav a {
+    color: #bbb;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+header nav a:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background effect on hover */
+    border-radius: 4px;
+}
+
+/* Receipt section styles */
 .receipt-section {
     max-width: 800px;
     margin: 20px auto;
@@ -9,13 +45,16 @@
 }
 
 .receipt-section h2 {
-    font-size: 24px;
+    font-size: 26px;
     color: #4CAF50;
+    margin-bottom: 15px;
 }
 
+/* Receipt items list */
 .receipt-section ul {
     list-style: none;
     padding: 0;
+    margin: 20px 0;
 }
 
 .receipt-section li {
@@ -23,21 +62,26 @@
     margin: 10px 0;
 }
 
+/* Continue Shopping button */
 .continue-shopping {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #FFA500;
-    color: white;
+    color: white !important; /* Ensure it uses this color, not inherited styles */
+    font-weight: bold;
+    font-size: 16px;
     text-decoration: none;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .continue-shopping:hover {
     background-color: #e69500;
+    transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Receipt items display */
 .receipt-items {
     list-style: none;
     padding: 0;
@@ -47,7 +91,11 @@
 .receipt-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fafafa;
 }
 
 .receipt-item-image {
