@@ -85,30 +85,24 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Error uploading image.");
         });
     }
-
+    
     function addImage(src) {
-    const uploadBox = document.getElementById("uploadBox");
-    let imagePreviewContainer = document.getElementById("imagePreviewContainer");
-
-    // Ensure the container exists inside the upload box
-    if (!imagePreviewContainer) {
-        console.error("Error: imagePreviewContainer not found!");
-        return;
+        const uploadedImagesContainer = document.getElementById("uploadedImages");
+    
+        if (!uploadedImagesContainer) {
+            console.error("Error: uploadedImagesContainer not found!");
+            return;
+        }
+    
+        // Create an image element
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Uploaded Image";
+    
+        // Append image to the new uploaded images section
+        uploadedImagesContainer.appendChild(img);
     }
-
-    // Create the image element
-    const img = document.createElement("img");
-    img.src = src;
-    img.style.width = "100px";  // Matches CSS
-    img.style.height = "100px"; // Matches CSS
-    img.style.objectFit = "cover"; // Prevents stretching
-    img.style.borderRadius = "5px";
-    img.style.border = "1px solid #ddd";
-    img.style.margin = "5px"; // Adds spacing
-
-    // Append image to preview container
-    imagePreviewContainer.appendChild(img);
-}
+    
 
     
 });
