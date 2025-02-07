@@ -89,14 +89,23 @@
                     <!-- Register Form -->
                     <div id="register-form" class="hidden">
                         <h2>Create an account</h2>
-                        <div id="g_id_onload" data-client_id="635387862269-le910fd2692950eossu72bq321c7lcie.apps.googleusercontent.com" 
-                            data-context="signin" data-ux_mode="popup" 
-                            data-callback="handleCredentialResponse" 
-                            data-auto_prompt="false">
+                        <!-- Google Sign-In -->
+                        <div id="g_id_onload"
+                        data-client_id="635387862269-le910fd2692950eossu72bq321c7lcie.apps.googleusercontent.com"
+                        data-context="signin"
+                        data-ux_mode="popup"
+                        data-callback="handleGoogleSignUp"
+                        data-auto_prompt="false">
                         </div>
-                        <div class="g_id_signin" data-type="standard" data-shape="rectangular"
-                            data-theme="outline" data-text="signin_with" data-size="large">
+
+                        <div class="g_id_signin"
+                        data-type="standard"
+                        data-shape="rectangular"
+                        data-theme="outline"
+                        data-text="signin_with"
+                        data-size="large">
                         </div>
+
                         <p>OR</p>
                         <form>
                             <input type="email" placeholder="Email" required>

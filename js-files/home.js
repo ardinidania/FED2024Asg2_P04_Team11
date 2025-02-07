@@ -137,3 +137,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+//  Function to handle Google Sign-Up and Redirect to shop.html
+function handleGoogleSignUp(response) {
+    console.log("Google Sign-Up Success:", response);
+
+    // Show loading animation if available
+    const loadingOverlay = document.getElementById("loading-animation");
+    if (loadingOverlay) {
+        loadingOverlay.classList.remove("hidden");
+        loadingOverlay.style.display = "flex";
+    }
+
+    //  Redirect to shop.html after 2 seconds
+    setTimeout(() => {
+        window.location.href = "shop.html";
+    }, 2000);
+}
