@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css-files/shop.css">
     <link rel="stylesheet" href="../css-files/cart.css">
     <link rel="stylesheet" href="../css-files/payment.css"> <!-- Link to custom payment styles -->
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body>
     <header>
@@ -28,10 +29,25 @@
                 <button id="submit-button" type="button">Pay Now</button>
                 <p id="payment-errors" class="payment-errors"></p>
             </form>
+    
+            <!-- ✅ Payment Success Animation (Initially Hidden) -->
+            <div id="payment-success-animation" class="hidden">
+                <dotlottie-player 
+                    src="https://lottie.host/6abb14f3-c04f-4bff-8dee-bf119e15ebf9/1OKOarKzr0.lottie"
+                    background="transparent"
+                    speed="1"
+                    style="width: 300px; height: 300px; margin: auto;"
+                    loop
+                    autoplay>
+                </dotlottie-player>
+            </div>
+    
+            <!-- ✅ Success Message -->
             <p id="payment-success" class="payment-success" style="display: none;">Payment successful!</p>
         </section>
-       
     </main>
+    
+
 
     <footer>
         <p>&copy; 2025 MokeSell. All rights reserved.</p>
