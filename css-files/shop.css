@@ -230,8 +230,7 @@ header {
 
 /* Search Bar */
 .search-bar {
-    width: 100%;
-    max-width: 810px;
+    max-width: 980px;
     display: flex;
     align-items: center;
     background: #fff;
