@@ -1,5 +1,8 @@
 # FED2024Asg2_P04_Team11
 
+GitHub Link: https://github.com/ardinidania/FED2024Asg2_P04_Team11.git
+Video Link: 
+
 Project Name: MokeSell 
 
 MokeSell is a user-friendly online marketplace made for tech enthusiasts who want to purchase and sell Samsung and Apple goods. With its user-friendly layout

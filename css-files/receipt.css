@@ -1,6 +1,6 @@
 /* General link styles */
 a {
-    color: #bbb; /* Default gray color for all links */
+    color: #bbb; 
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -14,7 +14,7 @@ a:hover {
 header nav {
     display: flex;
     justify-content: flex-end;
-    gap: 20px; /* Add space between links */
+    gap: 20px; 
     padding: 10px;
 }
 
@@ -29,7 +29,7 @@ header nav a {
 
 header nav a:hover {
     color: white;
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle background effect on hover */
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
 }
 
@@ -68,7 +68,7 @@ header nav a:hover {
     margin-top: 20px;
     padding: 12px 24px;
     background-color: #FFA500;
-    color: white !important; /* Ensure it uses this color, not inherited styles */
+    color: white !important; 
     font-weight: bold;
     font-size: 16px;
     text-decoration: none;
@@ -78,7 +78,7 @@ header nav a:hover {
 
 .continue-shopping:hover {
     background-color: #e69500;
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05); 
 }
 
 /* Receipt items display */
@@ -105,4 +105,77 @@ header nav a:hover {
     border-radius: 8px;
     margin-right: 15px;
     border: 1px solid #ccc;
+}
+
+/* ============================================================= */
+/*  Responsive Media Queries */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .receipt-section {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .receipt-section h2 {
+        font-size: 22px;
+    }
+}
+
+/*  Navbar Adjustments */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 5px;
+        gap: 10px;
+    }
+
+    header nav a {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+}
+
+/*  Receipt Section */
+@media (max-width: 768px) {
+    .receipt-section {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    .receipt-section h2 {
+        font-size: 20px;
+    }
+
+    .receipt-section li {
+        font-size: 16px;
+    }
+}
+
+/*  Receipt Items */
+@media (max-width: 600px) {
+    .receipt-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .receipt-item-image {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+}
+
+/*  Continue Shopping Button */
+@media (max-width: 768px) {
+    .continue-shopping {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }

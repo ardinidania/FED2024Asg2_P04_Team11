@@ -93,7 +93,7 @@ header {
     color: white;
     text-align: center;
     display: inline-block;
-    width: 150px; /* Ensure buttons are the same width */
+    width: 150px; 
 }
 
 /* Specific button styles */
@@ -154,14 +154,14 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
+    width: 100vw; 
+    height: 100vh; 
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 9999;
-    display: flex; /* Flex layout to enable centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    overflow: hidden; /* Prevent scrollbars on the modal itself */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
 }
 
 /* Center and contain modal content */
@@ -174,8 +174,8 @@ header {
     width: 90%;
     max-height: 90%;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for modal */
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow-y: auto; 
 }
 
 /* Responsive image inside the modal */
@@ -235,4 +235,116 @@ header {
 
 .show-more-container:hover {
     background-color: #f0f0f0;
+}
+
+/* ============================================================= */
+/*  Responsive Media Queries */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 85%;
+    }
+}
+
+/*  Navbar Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .notification-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*  Notifications Section */
+@media (max-width: 768px) {
+    .notifications-container {
+        padding: 10px;
+    }
+
+    .notification-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .listing-image {
+        width: 80px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .notification-content h2 {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+
+/*  Modal Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        max-height: 85%;
+        padding: 15px;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    .modal-content p {
+        font-size: 14px;
+    }
+
+    .close-modal {
+        top: 5px;
+        right: 5px;
+        font-size: 22px;
+    }
+}
+
+/*  Show More Button */
+@media (max-width: 600px) {
+    .show-more-container {
+        padding: 8px;
+    }
+
+    .arrow-icon {
+        font-size: 14px;
+    }
+
+    .show-more-text {
+        font-size: 13px;
+    }
+}
+
+/*  Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 12px;
+        text-align: center;
+    }
 }

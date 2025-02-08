@@ -263,3 +263,128 @@ footer {
     color: white;
     margin-top: 0; /* Ensure no extra margin */
 }
+
+/* ============================================================= */
+/*  General Mobile Styles */
+@media (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+/* ============================================================= */
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+        gap: 10px;
+    }
+
+
+    .logo {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .homepage-content {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .homepage-content img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+/*  Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .shop-now {
+        width: 100%;
+        max-width: 250px;
+        padding: 12px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/*  Login/Register Modal */
+@media (max-width: 768px) {
+    .account-wrapper {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .account-box {
+        width: 100%;
+    }
+
+    .account-bg {
+        display: none;
+    }
+}
+
+/*  Profile Section */
+@media (max-width: 768px) {
+    .profile-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-details {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .chat-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/*  Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 12px;
+        text-align: center;
+    }
+}

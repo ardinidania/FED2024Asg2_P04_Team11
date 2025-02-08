@@ -1,6 +1,7 @@
+/* ============================================================= */
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 50px;
     background-color: #f4f4f4;
     color: #333;
@@ -12,6 +13,7 @@ h1 {
     text-align: center;
 }
 
+/* ============================================================= */
 /* Form Styling */
 textarea, input[type="text"], input[type="number"] {
     width: 100%;
@@ -24,6 +26,7 @@ textarea, input[type="text"], input[type="number"] {
     margin-bottom: 20px;
 }
 
+/* ============================================================= */
 /* Buttons */
 button, input[type="submit"] {
     background-color: #3498db;
@@ -41,6 +44,7 @@ button:hover, input[type="submit"]:hover {
     background-color: #2980b9;
 }
 
+/* ============================================================= */
 /* Sections */
 .initial-box, .chat-box, .feedback-box {
     background-color: #fff;
@@ -50,14 +54,12 @@ button:hover, input[type="submit"]:hover {
     margin-bottom: 20px;
 }
 
-.chat-box {
+/* Initially Hidden Sections */
+.chat-box, .feedback-box {
     display: none;
 }
 
-.feedback-box {
-    display: none;
-}
-
+/* ============================================================= */
 /* Chat Message Container */
 .message-container {
     border: 1px solid #ddd;
@@ -72,6 +74,7 @@ button:hover, input[type="submit"]:hover {
     gap: 10px;
 }
 
+/* ============================================================= */
 /* Messages */
 .message {
     max-width: 60%;
@@ -101,13 +104,42 @@ button:hover, input[type="submit"]:hover {
     margin-right: auto;
 }
 
-/* Responsive Design */
+/* ============================================================= */
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
+    body {
+        margin: 20px; 
+    }
+
+    h1 {
+        font-size: 22px; 
+    }
+
+    textarea, input[type="text"], input[type="number"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
     .message-container {
-        max-width: 90%;
+        max-width: 100%;
+        padding: 10px;
     }
 
     .message {
         max-width: 80%;
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+  
+    button, input[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    
+    .initial-box, .chat-box, .feedback-box {
+        padding: 15px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 }
