@@ -113,4 +113,4 @@ We developed content based on extensive research into current trends in eCommerc
 acknowledgements
 - We greatly appreciate the efforts and dedication of all team members in making this project a success.
 - We got our inspiration from ecommerce platforms such as carousell, shopee and many others that played a crucial role in enhancing the website's design and functionality.
-- special thanks to the APIs (firebase,), lottie animations that we used to enhance our website design and also github to manage version control and host the project.
+- special thanks to the APIs (firebase, google sign up, imgbb), lottie animations that we used to enhance our website design and also github to manage version control and host the project.
