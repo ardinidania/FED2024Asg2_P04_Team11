@@ -17,20 +17,55 @@ The homepage pressents a visually striking hero section that draws readers atten
 The call to action "Shop Now" takes users straight to product listings. Users can quickly locate particular products thanks to the filtering mechanism, and buyers may follow their favorite merchants to increase engagement. 
 A user-friendly image upload function and categorized listings for simple product maintenance are further features that guarantee a seamless experience for sellers in the product listing section. 
 
+Contributions
+Feature 1: User Account Management (Ardini)
+Account Creation and Login: Users can create an account and log in to the platform.
+Profile Management: Users can update their profile information and manage their account settings.
+Follow Feature: Users can follow other users to receive updates on new listings.
 
-Features
+Feature 2: Listing Management (Puteri)
+Create Listings: Sellers can create listings by selecting categories, uploading photos, and providing
+item details.
+Active Listings Limit: Sellers can have a maximum of 30 active listings at any one time for free.
+Listing Expiry: Listings automatically become inactive after 30 days.
+Bump Listings: Sellers can promote their listings by purchasing different types of bumps to increase
+visibility.
+
+Feature 3: Search and Browsing (Puteri)
+Search Functionality: Buyers can search for specific items using keywords.
+Category Browsing: Buyers can browse listings by category and sub-category.
+Save Listings: Buyers can save listings for later viewing by liking them.
+
+Feature 4: Communication and Transactions (Megan)
+Chat Feature: Buyers can start a chat with sellers to discuss transaction details.
+Offer Submission: Buyers can submit an offer price through the system.
+Review System: Both buyers and sellers can post reviews and rate each other after a transaction is
+completed.
+
+Feature 5: Feedback and Support (Ardini)
+Feedback Submission: Users can submit feedback on issues or problems and categorize them.
+Support Staff Assignment: Feedback is assigned to support staff for resolution.
+Support Staff Rating: Users can rate the response of support staff after feedback is handled.
+
+Feature 6: Additional Features (Megan)
+User Notifications: Users receive notifications for new listings, offers, and messages.
+Transaction History: Users can view their past transactions and reviews.
+User Ratings and Reviews: Display user ratings and reviews to build trust within the marketplace. 
+
+
+Features on our website
 
 Feature 1 - Allows users to create an account and log in to the platform. 
-Feature 2 - Enables Users can update their profile information and manage their account settings.
+Feature 2 - Enables Users can update their profile information and manage their account settings. 
 Feature 3 - Allows Users to create listings by pressing either the add photo icon or the select photos button (can select up to 30 photos), listings will automatically be removed after 30 days.
 Feature 4 - Enables users to search for specific items by typing or use the filtering option and press the "Search" button to find the specific products they want.
 Feature 5 - Allows users to add the products they want to the yellow shopping cart by clicking on the "add to cart" button , they are able to add as much quantity as they like. 
 Feature 6 - Allows users to click on the yellow shopping cart to make purchase of the product. 
-Feature 6 - Allows users to click on the "Follow" button, leading them to the Seller's profile. If they have any queries they want to clarify with seller, they can simply click on the "chat with Seller" button in the follow page. Buyers are also able press the green "Follow" button to follow.
+Feature 6 - Allows users to click on the "Follow" button, leading them to the Seller's profile. If they have any queries they want to clarify with seller, they can simply click on the "chat with Seller" button in the follow page. Buyers are also able press the green "Follow" button to follow. 
 Feature 7 - Both buyers and sellers can post reviews and rate each other in the review section of the follow page after a transaction is completed. 
 Feature 8 - Allows users to view notification by clicking on the yellow notifcation bell button to check for updates and promotions. 
 Feature 9 - Live chat for help. Users can get customer support shld they have any issues when using the website.
-Feature 10 - Enables users to view transaction history.
+Feature 10 - Enables users to view transaction history. 
 
 
 Technologies Used
