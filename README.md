@@ -1,7 +1,7 @@
 # FED2024Asg2_P04_Team11
 
 GitHub Link: https://github.com/ardinidania/FED2024Asg2_P04_Team11.git
-Video Link: 
+Video Link: https://drive.google.com/drive/folders/1sTUvylNlhlEQ-4jElOdvByeUm_0ZJ4fq?usp=drive_link
 
 Project Name: MokeSell 
 
